@@ -62,6 +62,7 @@ def acceleration(x: int):
 		time.sleep(0.2)
 	p.stop()
 	speedCount = 0
+	stop()
 
 pygame.init()
 pygame.display.set_mode((300,300))
