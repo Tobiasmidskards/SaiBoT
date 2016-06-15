@@ -74,10 +74,8 @@ while running:
 			pygame.quit()
 		if event.type == pygame.KEYDOWN:
 
-			global keydown
 			keydown = True
 
-			global speedCount
 			print(speedCount)
 
 			if event.key == pygame.K_w:
@@ -96,7 +94,6 @@ while running:
 				stop()
 
 		else: 
-			global keydown
 			keydown = False
 
 GPIO.cleanup()
