@@ -74,7 +74,8 @@ while running:
 			pygame.quit()
 		if event.type == pygame.KEYDOWN:
 
-			global keydown = True
+			global keydown
+			keydown = True
 
 			global speedCount
 			print(speedCount)
