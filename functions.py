@@ -49,8 +49,8 @@ keydown = False
 def acceleration(x):
 	p = GPIO.PWM(x , 50)
 	p.ChangeFrequency(100)
-	p.start(speedCount)
 	global speedCount
+	p.start(speedCount)
 	global keydown
 	while keydown == True & speedCount < 100:
 		speedCount = (speedCount + 10)
@@ -74,8 +74,7 @@ while running:
 			pygame.quit()
 		if event.type == pygame.KEYDOWN:
 
-			global keydown
-			keydown = True
+			global keydown = True
 
 			global speedCount
 			print(speedCount)
@@ -96,8 +95,7 @@ while running:
 				stop()
 
 		else: 
-			global keydown
-			keydown = False
+			global keydown = False
 
 GPIO.cleanup()
 
