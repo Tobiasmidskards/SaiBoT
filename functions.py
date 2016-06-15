@@ -47,7 +47,7 @@ def stop():
 
 keydown = False
 
-def acceleration(x: int):
+def acceleration(x):
 	p = GPIO.PWM(x , 50)
 	p.ChangeFrequency(100)
 	p.start(speedCount)
