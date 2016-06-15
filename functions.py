@@ -96,7 +96,8 @@ while running:
 				stop()
 
 		else: 
-			global keydown = False
+			global keydown
+			keydown = False
 
 GPIO.cleanup()
 
