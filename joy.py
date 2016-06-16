@@ -222,7 +222,6 @@ try:
 				
 			elif squarePressed:
 				print('Square has been pressed')
-				squarePressed = False
 			
 			else:
 				leftState = False
