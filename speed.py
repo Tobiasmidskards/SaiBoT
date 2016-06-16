@@ -28,7 +28,7 @@ def speed(level):
 
 try:
 	print(speed)
-	Hastighed = input ('skriv hastigheden:')
+	hastighed = input ('skriv hastigheden:')
 	if hastighed == 1:
 		speed(1)
 
