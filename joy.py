@@ -126,11 +126,11 @@ def PygameHandler(events):
 
 try:
 	print 'Press [ESC] to quit'
+	counter = 0
 	# Loop indefinitely
 	while True:
 		# Get the currently pressed keys on the keyboard
 		PygameHandler(pygame.event.get())
-		counter = 0
 		if hadEvent:
 			# Keys have changed, generate the command list based on keys
 			hadEvent = False
