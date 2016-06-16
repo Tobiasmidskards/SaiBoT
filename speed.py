@@ -45,15 +45,15 @@ def speed(level):
 
 try:
 	print(current)
-	hastighed = input ('skriv hastigheden:')
-	if hastighed == 0:
-		speed(0)
-	elif hastighed == 1:
-		speed(1)
-	else:
-		speed(2)
 
 	while True:
+		hastighed = input ('skriv hastigheden:')
+		if hastighed == 0:
+			speed(0)
+		elif hastighed == 1:
+			speed(1)
+		else:
+			speed(2)
 		print(current)
 		time.sleep(1)
 except KeyboardInterrupt:
