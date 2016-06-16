@@ -70,7 +70,6 @@ running = True
 while running:
 	print ('running')
 	for event in pygame.event.get():
-		print ('11111')
 		if event.type == pygame.QUIT:
 			running = False
 			pygame.quit()
@@ -97,6 +96,7 @@ while running:
 
 		else: 
 			keydown = False
+			print('false')
 
 GPIO.cleanup()
 
