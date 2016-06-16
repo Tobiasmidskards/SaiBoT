@@ -71,6 +71,7 @@ LEFT = 'left'
 STOP = 'stop'
 
 pygame.init()
+pygame.display.set_mode((100, 100))
 
 def runGame():
 	direction = STOP
