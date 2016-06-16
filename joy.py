@@ -283,7 +283,7 @@ try:
 		# Wait for the interval period
 		dist()
 		if counter == 10 and 20:
-			print(distance)
+			print(The distance is:, distance)
 			
 		time.sleep(interval)
 	# Disable all drives
