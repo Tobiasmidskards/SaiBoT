@@ -87,19 +87,16 @@ while running:
 		
 		#forward()
 		#keydown = True
-	elif(char == "a"): 
+	if(char == "a"): 
 		left() 
 		keydown = True
-	elif(char == "s"): 
+	if(char == "s"): 
 		back() 
 		keydown = True
-	elif(char == "d"): 
+	if(char == "d"): 
 		right() 
 		keydown = True
-	else:	
-		print('stop')
-		#keydown = False
-		#stop()
+	keydown = False
 
 
 GPIO.cleanup()
