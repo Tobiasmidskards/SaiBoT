@@ -133,8 +133,8 @@ def dist():
 
 	difference = (Signal - noSignal)
 
-	distance = difference / 0.000058
-
+	#distance = difference / 0.000058
+	distance = 16
 	return distance
 
 
