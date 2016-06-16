@@ -5,7 +5,7 @@
 import time
 import pygame
 import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
 # Set which GPIO pins the drive outputs are connected to
@@ -32,7 +32,7 @@ leftDrive = DRIVE_1                     # Drive number for left motor
 rightDrive = DRIVE_4                    # Drive number for right motor
 axisUpDown = 1                          # Joystick axis to read for up / down position
 axisUpDownInverted = False 		# Set this to True if up and down appear to be swapped
-axisLeftRight = 3 			# Joystick axis to read for left / right position
+axisLeftRight = 2 			# Joystick axis to read for left / right position
 axisLeftRightInverted = False 		# Set this to True if left and right appear to be swapped
 interval = 0.1 				# Time between keyboard updates in seconds, smaller responds faster but uses more processor time
 
