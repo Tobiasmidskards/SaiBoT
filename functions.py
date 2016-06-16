@@ -82,6 +82,10 @@ pygame.init()
 screen = pygame.display.set_mode([300, 100])
 pygame.display.set_caption("SaiBoT - Press [ESC] to quit")
 
+black = (0,0,0)
+white = (255,255,255)
+x,y=0,0
+
 def runGame(events):
 	setboard()
 	global hadEvent
@@ -144,6 +148,10 @@ try:
 			elif UP:
 				forward()
 		time.sleep(0.1)
+		window.fill(black)
+		pygame.draw.rect(window,white,(x,y,50,50))
+		pygame.display.flip()
+
 	stop()
 except KeyboardInterrupt:
 	stop()
