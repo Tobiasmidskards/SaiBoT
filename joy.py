@@ -232,6 +232,7 @@ try:
 				
 			elif crossPressed:
 				print('Cross has been pressed')
+				moveQuit = True
 				
 			else:
 				leftState = False
