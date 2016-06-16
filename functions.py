@@ -63,13 +63,11 @@ def acceleration(x):
 	speedCount = 0
 	stop()
 
-
-pygame.display.set_mode((300,300))
+pygame.init()
 running = True
 
 while running:
 	print ('running')
-	pygame.init()
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			running = False
