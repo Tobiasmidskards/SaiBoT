@@ -5,8 +5,10 @@
 import time
 import pygame
 import RPi.GPIO as GPIO
+GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
+
 
 # Set which GPIO pins the drive outputs are connected to
 DRIVE_1 = 9
