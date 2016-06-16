@@ -152,7 +152,7 @@ try:
 		PygameHandler(pygame.event.get())
 		if hadEvent:
 			# Keys have changed, generate the command list based on keys
-			hadEvent = False
+			
 			if moveQuit:
 				break
 			elif moveLeft:
@@ -195,6 +195,7 @@ try:
 			#GPIO.output(rightDriveCounter, rightStateCounter)
 			#acceleration(7)
 			print(hadEvent)
+			hadEvent = False
 			
 		# Wait for the interval period
 		time.sleep(interval)
