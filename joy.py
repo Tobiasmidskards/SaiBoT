@@ -170,7 +170,7 @@ try:
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
-				if counter > 10:
+				if counter > 30:
 					print('idle')
 					counter = 0
 				
