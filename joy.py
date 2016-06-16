@@ -282,7 +282,7 @@ try:
 			
 		# Wait for the interval period
 		dist()
-		if counter == 10 and 20:
+		if counter == 10 or 20:
 			print 'The distance is:', distance
 			
 		time.sleep(interval)
