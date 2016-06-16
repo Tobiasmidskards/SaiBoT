@@ -94,11 +94,11 @@ def PygameHandler(events):
 			# Determine Up / Down values
 			if upDown < -0.1:
 				moveUp = True
-				print(UP)
+				print('UP')
 				moveDown = False
 			elif upDown > 0.1:
 				moveUp = False
-				print(DOWN)
+				print('DOWN')
 				moveDown = True
 			else:
 				moveUp = False
@@ -106,11 +106,11 @@ def PygameHandler(events):
 			# Determine Left / Right values
 			if leftRight < -0.1:
 				moveLeft = True
-				print(LEFT)
+				print('LEFT')
 				moveRight = False
 			elif leftRight > 0.1:
 				moveLeft = False
-				print(RIGHT)
+				print('RIGHT')
 				moveRight = True
 			else:
 				moveLeft = False
