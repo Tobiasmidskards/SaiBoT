@@ -1,41 +1,41 @@
 #!/usr/bin/env python
 # coding: Latin-1
- 
+
 # Load library functions we want
 import time
 import pygame
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
- 
+
 # Set which GPIO pins the drive outputs are connected to
 DRIVE_1 = 4
 DRIVE_2 = 18
 DRIVE_3 = 8
 DRIVE_4 = 7
- 
+
 # Set all of the drive pins as output pins
 GPIO.setup(DRIVE_1, GPIO.OUT)
 GPIO.setup(DRIVE_2, GPIO.OUT)
 GPIO.setup(DRIVE_3, GPIO.OUT)
 GPIO.setup(DRIVE_4, GPIO.OUT)
- 
+
 # Function to set all drives off
 def MotorOff():
 	GPIO.output(DRIVE_1, GPIO.LOW)
 	GPIO.output(DRIVE_2, GPIO.LOW)
 	GPIO.output(DRIVE_3, GPIO.LOW)
 	GPIO.output(DRIVE_4, GPIO.LOW)
- 
+
 # Settings for JoyBorg
-leftDrive = DRIVE_1                     # Drive number for left motor
-rightDrive = DRIVE_4                    # Drive number for right motor
-axisUpDown = 1                          # Joystick axis to read for up / down position
-axisUpDownInverted = False              # Set this to True if up and down appear to be swapped
-axisLeftRight = 3                       # Joystick axis to read for left / right position
-axisLeftRightInverted = False           # Set this to True if left and right appear to be swapped
-interval = 0.1                          # Time between keyboard updates in seconds, smaller responds faster but uses more processor time
- 
+leftDrive = DRIVE_1                     # Drive number for left motor
+rightDrive = DRIVE_4                    # Drive number for right motor
+axisUpDown = 1                          # Joystick axis to read for up / down position
+axisUpDownInverted = False 		# Set this to True if up and down appear to be swapped
+axisLeftRight = 3 			# Joystick axis to read for left / right position
+axisLeftRightInverted = False 		# Set this to True if left and right appear to be swapped
+interval = 0.1 				# Time between keyboard updates in seconds, smaller responds faster but uses more processor time
+
 # Setup pygame and key states
 global hadEvent
 global moveUp
@@ -55,7 +55,7 @@ joystick = pygame.joystick.Joystick(0)
 joystick.init()
 screen = pygame.display.set_mode([300,300])
 pygame.display.set_caption("JoyBorg - Press [ESC] to quit")
- 
+
 # Function to handle pygame events
 def PygameHandler(events):
 	# Variables accessible outside this function
