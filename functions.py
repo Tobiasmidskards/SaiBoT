@@ -4,7 +4,7 @@ import time
 
 GPIO.setwarnings(False)
 
-# Variabels
+# Variabels.
 speedCount = 0
 
 def setboard():
