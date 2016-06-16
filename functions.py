@@ -135,6 +135,7 @@ try:
 	print 'Press [ESC] to quit'
 	while True:
 		runGame(pygame.event.get())
+		print('looping')
 		if hadEvent:
 			hadEvent = False
 			if QUIT:
