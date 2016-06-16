@@ -87,13 +87,13 @@ while running:
 		
 		#forward()
 		#keydown = True
-	if(char == "a"): 
+	elif(char == "a"): 
 		left() 
 		keydown = True
-	if(char == "s"): 
+	elif(char == "s"): 
 		back() 
 		keydown = True
-	if(char == "d"): 
+	elif(char == "d"): 
 		right() 
 		keydown = True
 	else:	
