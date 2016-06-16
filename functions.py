@@ -138,6 +138,7 @@ try:
 		print('looping')
 		if hadEvent:
 			hadEvent = False
+			print('had event')
 			if QUIT:
 				break
 			elif UP:
