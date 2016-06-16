@@ -91,7 +91,7 @@ while running:
 		left() 
 		keydown = True
 	if(char == "s"): 
-		backward() 
+		back() 
 		keydown = True
 	if(char == "d"): 
 		right() 
