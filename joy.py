@@ -51,8 +51,6 @@ global moveRight
 global moveQuit
 global speedCount
 
-speedCount = 0
-
 hadEvent = True
 moveUp = False
 moveDown = False
@@ -66,8 +64,9 @@ joystick.init()
 screen = pygame.display.set_mode([300,300])
 pygame.display.set_caption("JoyBorg - Press [ESC] to quit")
 
-def acceleration(x):
-	p = GPIO.PWM(x , 50)
+def acceleration(channel):
+	speedCount = 0
+	p = GPIO.PWM(channel , 50)
 	p.ChangeFrequency(100)
 	p.start(speedCount)
 	while hadEvent == True and speedCount < 100:
