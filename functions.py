@@ -93,8 +93,8 @@ def runGame():
 				elif event.key == K_DOWN:
 					direction = DOWN
 		
-		if direction == UP:
-			print ('UP') 
+		if direction == LEFT:
+			print ('LEFT') 
 		elif direction == STOP:
 			print ('STOP')
 			#a
