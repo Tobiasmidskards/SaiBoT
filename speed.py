@@ -50,6 +50,7 @@ try:
 		speed(1)
 
 	while True:
+		global current
 		print(current)
 		time.sleep(1)
 except KeyboardInterrupt:
