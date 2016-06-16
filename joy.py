@@ -15,11 +15,20 @@ DRIVE_2 = 11
 DRIVE_3 = 15
 DRIVE_4 = 13
 
+# GPIO pins for distance
+trigger = 12
+echo = 16
+
+
 # Set all of the drive pins as output pins
 GPIO.setup(DRIVE_1, GPIO.OUT)
 GPIO.setup(DRIVE_2, GPIO.OUT)
 GPIO.setup(DRIVE_3, GPIO.OUT)
 GPIO.setup(DRIVE_4, GPIO.OUT)
+
+# Setup for distance sensor
+GPIO.setup(trigger, GPIO.OUT)
+GPIO.setup(echo, GPIO.IN)
 
 # Function to set all drives off
 def MotorOff():
@@ -40,6 +49,7 @@ axisLeftRight = 0 			# Joystick axis to read for left / right position
 axisLeftRightInverted = False 		# Set this to True if left and right appear to be swapped
 interval = 0.1 				# Time between keyboard updates in seconds, smaller responds faster but uses more processor time
 
+# speedcontroller testing
 
 #global level
 #global current
@@ -91,6 +101,7 @@ global moveQuit
 global speedCount
 global squarePressed
 global CrossPressed
+global distance
 
 hadEvent = True
 moveUp = False
@@ -108,6 +119,23 @@ joystick.init()
 screen = pygame.display.set_mode([300,300])
 pygame.display.set_caption("JoyBorg - Press [ESC] to quit")
 
+def dist():
+	global distance
+	GPIO.output(12, True)
+	time.sleep(0.00001)
+	GPIO.output(12, False)
+
+	while GPIO.input(echo) == 0:
+		noSignal = time.time()
+
+	while GPIO.input(echo) == 1:
+		Signal = time.time()
+
+	difference = (Signal - noSignal)
+
+	distance = difference / 0.000058
+
+	return distance
 
 
 # Function to handle pygame events
@@ -234,6 +262,10 @@ try:
 				print('Cross has been pressed')
 				moveQuit = True
 				
+			elif distance < 15:
+				MotorOff()
+				print('For your safety - Motors has been disabled')
+				
 			else:
 				leftState = False
 				rightState = False
@@ -249,6 +281,10 @@ try:
 			GPIO.output(rightDriveCounter, rightStateCounter)
 			
 		# Wait for the interval period
+		dist()
+		def cap():
+			if counter == 20:
+				print(distance)
 		time.sleep(interval)
 	# Disable all drives
 	MotorOff()
