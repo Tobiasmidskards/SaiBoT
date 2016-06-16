@@ -1,4 +1,5 @@
-import pygame
+import pygame, sys, termios, tty
+from pygame.locals import *
 import RPi.GPIO as GPIO
 import time
 
