@@ -263,7 +263,7 @@ try:
 				print('Cross has been pressed')
 				moveQuit = True
 				
-			elif distance < 15:
+			elif distance == distance < 15:
 				MotorOff()
 				print('For your safety - Motors has been disabled')
 				
@@ -283,9 +283,6 @@ try:
 			
 		# Wait for the interval period
 		dist()
-		def cap():
-			if counter == 20:
-				print(distance)
 		time.sleep(interval)
 	# Disable all drives
 	MotorOff()
