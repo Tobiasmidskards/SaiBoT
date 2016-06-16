@@ -41,46 +41,45 @@ axisLeftRightInverted = False 		# Set this to True if left and right appear to b
 interval = 0.1 				# Time between keyboard updates in seconds, smaller responds faster but uses more processor time
 
 
-global level
-global current
-global speedTick
-level = 0
-current = 33
-speedTick = 0
+#global level
+#global current
+#global speedTick
+#level = 0
+#current = 33
+#speedTick = 0
 
-def Tick():
-	global speedTick
-	speedTick = (speedTick + 1)
-	if speedTick == 3:
-		speedTick = 0
-	speed(speedTick)
+#def Tick():
+#	global speedTick
+#	speedTick = (speedTick + 1)
+#	if speedTick == 3:
+#		speedTick = 0
+#	speed(speedTick)
 
-def speed(level):
-	global current
-
-	first = GPIO.PWM(7, 100)
-	second = GPIO.PWM(11, 100)
-	third = GPIO.PWM(13, 100)
-	fourth = GPIO.PWM(15, 100)
-	
-	first.start(33)
-	second.start(33)
-	third.start(33)
-	fourth.start(33)
-
-	if level == 0:
-		current = 33
-	elif level == 1:
-		current = 66
-	elif level == 2:
-		current = 100
-	else:
-		print('doesnt work')
-
-	first.ChangeDutyCycle(current)
-	second.ChangeDutyCycle(current)
-	third.ChangeDutyCycle(current)
-	fourth.ChangeDutyCycle(current)
+#def speed(level):
+#	global current
+#
+#	first = GPIO.PWM(7, 100)
+#	second = GPIO.PWM(11, 100)
+#	third = GPIO.PWM(13, 100)
+#	fourth = GPIO.PWM(15, 100)
+#	first.start(33)
+#	second.start(33)
+#	third.start(33)
+#	fourth.start(33)
+#
+#	if level == 0:
+#		current = 33
+#	elif level == 1:
+#		current = 66
+#	elif level == 2:
+#		current = 100
+#	else:
+#		print('doesnt work')
+#
+#	first.ChangeDutyCycle(current)
+#	second.ChangeDutyCycle(current)
+#	third.ChangeDutyCycle(current)
+#	fourth.ChangeDutyCycle(current)
 
 # Setup pygame and key states
 global hadEvent
