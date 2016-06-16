@@ -30,6 +30,11 @@ def speed(level):
 	second = GPIO.PWM(11, 100)
 	third = GPIO.PWM(13, 100)
 	fourth = GPIO.PWM(15, 100)
+	
+	first.start()
+	second.start()
+	third.start()
+	fourth.start()
 
 	if level == 0:
 		speed = 33
