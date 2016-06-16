@@ -4,6 +4,7 @@ import time
 
 # Controls the PWM speed.
 global level
+global current
 level = 0
 current = 33
 
