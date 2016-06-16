@@ -169,7 +169,7 @@ try:
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
-				if counter > 50:
+				if counter > 40:
 					print('There is connection - Dont worry')
 					counter = 0
 				
@@ -177,7 +177,6 @@ try:
 			GPIO.output(rightDrive, rightState)
 			GPIO.output(leftDriveCounter, rightStateCounter)
 			GPIO.output(rightDriveCounter, rightStateCounter)
-			print(counter)
 			
 		# Wait for the interval period
 		time.sleep(interval)
