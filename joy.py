@@ -80,8 +80,6 @@ def speed(level):
 	second.ChangeDutyCycle(current)
 	third.ChangeDutyCycle(current)
 	fourth.ChangeDutyCycle(current)
-	print(speedTick)
-	print(current)
 
 # Setup pygame and key states
 global hadEvent
@@ -220,6 +218,8 @@ try:
 			GPIO.output(rightDrive, rightState)
 			GPIO.output(leftDriveCounter, rightStateCounter)
 			GPIO.output(rightDriveCounter, rightStateCounter)
+			print(speedTick)
+			print(current)
 			
 		# Wait for the interval period
 		time.sleep(interval)
