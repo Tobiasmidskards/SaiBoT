@@ -137,12 +137,14 @@ def PygameHandler(events):
 		elif event.type == joystick.JOYBUTTONDOWN:
 			# a button has been pressed
 			hadEvent = True
-			if joystick.get_button(0) == True:
+			button = joystick.get_button(0)
+			if button == True:
 				squarePressed = True
 				
 		elif event.type == joystick.JOYBUTTONUP:
 			hadEvent = True
-			if joystick.get_button(0) == True:
+			button = joystick.get_button(0)
+			if button == True:
 				squarePressed = False
 			
 		elif event.type == pygame.JOYAXISMOTION:
