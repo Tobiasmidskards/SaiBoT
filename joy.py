@@ -66,6 +66,7 @@ pygame.display.set_caption("JoyBorg - Press [ESC] to quit")
 
 def acceleration(channel):
 	speedCount = 0
+	print(speedCount)
 	p = GPIO.PWM(channel , 50)
 	p.ChangeFrequency(100)
 	p.start(speedCount)
@@ -188,7 +189,6 @@ try:
 			#GPIO.output(leftDriveCounter, rightStateCounter)
 			#GPIO.output(rightDriveCounter, rightStateCounter)
 			acceleration(7)
-			print(speedCount)
 			
 		# Wait for the interval period
 		time.sleep(interval)
