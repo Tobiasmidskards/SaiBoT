@@ -64,27 +64,7 @@ joystick.init()
 screen = pygame.display.set_mode([300,300])
 pygame.display.set_caption("JoyBorg - Press [ESC] to quit")
 
-def acceleration(channel):
-	global hadEvent
-	global speedCount
-	speedCount = 0
-	p = GPIO.PWM(channel , 50)
-	p.ChangeFrequency(100)
-	p.start(speedCount)
-	hadEvent = True
-	while hadEvent:
-		if speedCount < 100:
-			speedCount = (speedCount + 10)
-			p.ChangeDutyCycle(speedCount)
-			time.sleep(0.2)
-			print(speedCount)
-		elif speedCount == 100:
-			p.ChangeDutyCycle(100)
-			time.sleep(0.2)
-			print(speedCount)
-	p.stop()
-	speedCount = 0
-	MotorOff()
+
 
 # Function to handle pygame events
 def PygameHandler(events):
@@ -141,6 +121,28 @@ def PygameHandler(events):
 			else:
 				moveLeft = False
 				moveRight = False
+				
+				
+def acceleration(channel):
+	global hadEvent
+	global speedCount
+	speedCount = 0
+	p = GPIO.PWM(channel , 50)
+	p.ChangeFrequency(100)
+	p.start(speedCount)
+	while hadEvent == True:
+		if speedCount < 100:
+			speedCount = (speedCount + 10)
+			p.ChangeDutyCycle(speedCount)
+			time.sleep(0.2)
+			print(speedCount)
+		elif speedCount == 100:
+			p.ChangeDutyCycle(100)
+			time.sleep(0.2)
+			print(speedCount)
+	p.stop()
+	speedCount = 0
+	MotorOff()
 
 try:
 	print 'Press [ESC] to quit'
