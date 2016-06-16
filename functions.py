@@ -23,7 +23,6 @@ def setboard():
 
 def forward():
 	print('Forward')
-	acceleration(7)
 
 def backward():
 	print('Backward')
@@ -40,6 +39,7 @@ def stop():
 	GPIO.output(11,False)
 	GPIO.output(13,False)
 	GPIO.output(15,False)
+	GPIO.cleanup()
 
 # p = GPIO.PWM(7, 50) # Channel = 12 frequency = 50Hz
 # p.start(0)
@@ -63,47 +63,91 @@ def acceleration(x):
 	speedCount = 0
 	stop()
 
+global hadEvent
+global UP
+global DOWN
+global LEFT
+global RIGHT
+global STOP
+global QUIT
 
-UP = 'up'
-DOWN = 'down'
-RIGHT = 'right'
-LEFT = 'left'
-STOP = 'stop'
-
+hadEvent = True
+UP = False
+DOWN = False
+RIGHT = False
+LEFT = False
+STOP = False
+QUIT = False
 pygame.init()
-pygame.display.set_mode((100, 100))
+screen = pygame.display.set_mode([300, 100])
+pygame.display.set_caption("SaiBoT - Press [ESC] to quit")
 
-def runGame():
-	direction = STOP
-	while True:
-		for event in pygame.event.get():
-			if event.type == QUIT:
-				pygame.quit()
-				sys.exit()
+def runGame(events):
+	setboard()
+	global hadEvent
+	global UP
+	global DOWN
+	global LEFT
+	global RIGHT
+	global STOP
+	global QUIT
+	for event in events:
+			if event.type == pygame.QUIT:
+				hadEvent = True
+				QUIT = True
 
 			elif event.type == KEYDOWN:
-				if event.key == (K_LEFT or K_a):
-					direction = LEFT
 
-				elif event.key == K_RIGHT:
-					direction = RIGHT
+				hadEvent = True
+				if event.key == K_a:
+					UP = True
 
-				elif event.key == K_UP:
-					direction = UP
+				elif event.key == K_d:
+					RIGHT = True
 
-				elif event.key == K_DOWN:
-					direction = DOWN
+				elif event.key == K_w:
+					UP = True
+
+				elif event.key == K_s:
+					DOWN = True
+
+				elif event.key == K_ESCAPE:
+					QUIT = True
+			elif event.type == KEYUP:
+				hadEvent = True
+
+				if event.key == K_a:
+					UP = False
+
+				elif event.key == K_d:
+					RIGHT = False
+
+				elif event.key == K_w:
+					UP = False
+
+				elif event.key == K_s:
+					DOWN = False
+
+				elif event.key == K_ESCAPE:
+					QUIT = False
 		
-		if direction == LEFT:
-			print ('LEFT') 
-		elif direction == STOP:
-			print ('STOP')
-			#a
-		time.sleep(0.5)
+try:
+	print 'Press [ESC] to quit'
+	while True:
+		runGame(pygame.event.get())
+		if hadEvent:
+			hadEvent = False
+			if QUIT:
+				break
+			elif UP:
+				forward()
+		time.sleep(0.1)
+	stop()
+except KeyboardInterrupt:
+	stop()
 
-runGame()
 
-GPIO.cleanup()
+
 
 
 
