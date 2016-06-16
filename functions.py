@@ -91,12 +91,13 @@ while running:
 		left() 
 		keydown = True
 	if(char == "s"): 
-		back() 
+		backward() 
 		keydown = True
 	if(char == "d"): 
 		right() 
 		keydown = True
 	keydown = False
+	print(keydown)
 
 
 GPIO.cleanup()
