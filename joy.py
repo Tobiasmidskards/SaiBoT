@@ -11,7 +11,7 @@ GPIO.setwarnings(False)
 
 
 # Set which GPIO pins the drive outputs are connected to
-DRIVE_1 = 9
+DRIVE_1 = 7
 DRIVE_2 = 11
 DRIVE_3 = 13
 DRIVE_4 = 15
