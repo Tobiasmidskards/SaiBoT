@@ -2,8 +2,6 @@ import pygame
 import RPi.GPIO as GPIO
 import time
 
-GPIO.setmode(GPIO.BOARD)
-
 # Controls the PWM speed.
 global level
 level = 0
@@ -11,17 +9,11 @@ speed = 33
 
 def setboard():
 	GPIO.setmode(GPIO.BOARD)
-	GPIO.setup(18, GPIO.OUT) # LED WHITE
-	GPIO.setup(40, GPIO.OUT) # LED RED
-
 	GPIO.setup(7, GPIO.OUT)  # MOTOR 1-7
 	GPIO.setup(11,GPIO.OUT)  # MOTOR 2-11
 	GPIO.setup(13,GPIO.OUT)  # MOTOR 3-13
 	GPIO.setup(15,GPIO.OUT)  # MOTOR 4-15
 
-	GPIO.setup(12,GPIO.OUT)  # DISTANCE TRIGGER
-	GPIO.setup(16, GPIO.IN)  # DISTANCE ECHO
-	
 setboard()
 
 def speed(level):
@@ -56,5 +48,6 @@ try:
 
 	while True:
 		print(speed)
+		time.sleep(1)
 except KeyboardInterrupt:
 	GPIO.cleanup()
