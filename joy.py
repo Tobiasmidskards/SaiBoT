@@ -130,11 +130,11 @@ try:
 	while True:
 		# Get the currently pressed keys on the keyboard
 		PygameHandler(pygame.event.get())
+		counter = 0
 		if hadEvent:
 			# Keys have changed, generate the command list based on keys
 			hadEvent = False
-			counter = 0
-			counter = counter + 1
+			counter = (counter + 1)
 			print(counter)
 			
 			if moveQuit:
