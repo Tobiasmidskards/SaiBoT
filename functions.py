@@ -63,39 +63,39 @@ def acceleration(x):
 	speedCount = 0
 	stop()
 
-pygame.init()
+def getch(): 
+	fd = sys.stdin.fileno() 
+	old_settings = termios.tcgetattr(fd) 
+	try: 
+		tty.setraw(sys.stdin.fileno()) 
+		ch = sys.stdin.read(1) 
+	finally: 
+		termios.tcsetattr(fd, termios.TCSADRAIN, old_settings) 
+	return ch
+
 running = True
 
 while running:
 	print ('running')
-	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
-			running = False
-			pygame.quit()
-		if event.type == pygame.KEYDOWN:
-			
-			keydown = True
+	
+	char = getch()
 
-			print(speedCount)
+	if(char == "w"): 
+		forward()
+		keydown = True
+	if(char == "a"): 
+		left() 
+		keydown = True
+	if(char == "s"): 
+		back() 
+		keydown = True
+	if(char == "d"): 
+		right() 
+		keydown = True
+	else:	
+		keydown = False
+		stop()
 
-			if event.key == pygame.K_w:
-				forward()
-
-			elif event.key == pygame.K_s:
-				backward()
-
-			elif event.key == pygame.K_a:
-				left()
-
-			elif event.key == pygame.K_d:
-				right()
-
-			elif event.key == pygame.K_k:
-				stop()
-
-		else: 
-			keydown = False
-			print('false')
 
 GPIO.cleanup()
 
