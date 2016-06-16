@@ -65,8 +65,9 @@ screen = pygame.display.set_mode([300,300])
 pygame.display.set_caption("JoyBorg - Press [ESC] to quit")
 
 def acceleration(channel):
+	global hadEvent
+	global speedCount
 	speedCount = 0
-	print(speedCount)
 	p = GPIO.PWM(channel , 50)
 	p.ChangeFrequency(100)
 	p.start(speedCount)
