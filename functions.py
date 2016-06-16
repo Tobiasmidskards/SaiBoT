@@ -80,6 +80,7 @@ while running:
 	print ('running')
 	
 	char = getch()
+	global keydown
 
 	if(char == "w"): 
 		forward()
