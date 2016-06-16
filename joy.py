@@ -12,9 +12,9 @@ GPIO.setwarnings(False)
 
 # Set which GPIO pins the drive outputs are connected to
 DRIVE_1 = 7
-DRIVE_2 = 13
-DRIVE_3 = 11
-DRIVE_4 = 15
+DRIVE_2 = 11
+DRIVE_3 = 15
+DRIVE_4 = 13
 
 # Set all of the drive pins as output pins
 GPIO.setup(DRIVE_1, GPIO.OUT)
