@@ -32,8 +32,8 @@ def MotorOff():
 # Settings for JoyBorg
 leftDrive = DRIVE_1                     # Drive number for left motor
 rightDrive = DRIVE_4                    # Drive number for right motor
-leftStateCounter = DRIVE_2
-rightStateCounter = DRIVE_3
+leftDriveCounter = DRIVE_2
+rightDriveCounter = DRIVE_3
 axisUpDown = 1                          # Joystick axis to read for up / down position
 axisUpDownInverted = False 		# Set this to True if up and down appear to be swapped
 axisLeftRight = 0 			# Joystick axis to read for left / right position
