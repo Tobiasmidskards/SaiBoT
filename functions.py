@@ -1,5 +1,4 @@
-import pygame, sys, termios, tty
-from pygame.locals import *
+import pygame
 import RPi.GPIO as GPIO
 import time
 
@@ -64,39 +63,36 @@ def acceleration(x):
 	speedCount = 0
 	stop()
 
-def getch(): 
-	fd = sys.stdin.fileno() 
-	old_settings = termios.tcgetattr(fd) 
-	try: 
-		tty.setraw(sys.stdin.fileno()) 
-		ch = sys.stdin.read(1) 
-	finally: 
-		termios.tcsetattr(fd, termios.TCSADRAIN, old_settings) 
-	return ch
 
-running = True
+UP = 'up'
+DOWN = 'down'
+RIGHT = 'right'
+LEFT = 'left'
+STOP = 'stop'
 
-while running:
-	print ('running')
-	
-	char = getch()
-	global keydown
+def runGame():
+	direction = STOP
+	while True:
+		for event in pygame.event.get():
+			if event.type == QUIT:
+				pygame.quit()
+				sys.exit()
 
-	if(char == "w"): 
-		print('forward')
+			elif event.type == KEYDOWN:
+				if event.key == (K_LEFT or K_a):
+					direction = LEFT
+
+				elif event.key == K_RIGHT:
+					direction = RIGHT
+
+				elif event.key == K_UP:
+					direction = UP
+
+				elif event.key == K_DOWN:
+					direction = DOWN
 		
-		#forward()
-		#keydown = True
-	if(char == "a"): 
-		left() 
-		keydown = True
-	if(char == "s"): 
-		back() 
-		keydown = True
-	if(char == "d"): 
-		right() 
-		keydown = True
-	print(keydown)
+		if direction == UP:
+			print ('UP') 
 
 
 GPIO.cleanup()
