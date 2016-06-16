@@ -183,8 +183,7 @@ try:
 				rightState = True
 				rightStateCounter = True
 				print('Left')
-				Tick()
-				
+
 			elif moveRight:
 				leftState = True
 				rightState = False
