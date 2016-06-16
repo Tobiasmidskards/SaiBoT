@@ -135,7 +135,6 @@ try:
 			# Keys have changed, generate the command list based on keys
 			hadEvent = False
 			counter = (counter + 1)
-			print(counter)
 			
 			if moveQuit:
 				break
@@ -171,7 +170,7 @@ try:
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
-				if counter > 30:
+				if counter > 10:
 					print('idle')
 					counter = 0
 				
