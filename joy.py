@@ -70,15 +70,16 @@ def acceleration(channel):
 	p = GPIO.PWM(channel , 50)
 	p.ChangeFrequency(100)
 	p.start(speedCount)
-	while hadEvent == True and speedCount < 100:
-		speedCount = (speedCount + 10)
-		p.ChangeDutyCycle(speedCount)
-		time.sleep(0.2)
-		print(speedCount)
-	while hadEvent == True and speedCount == 100:
-		p.ChangeDutyCycle(100)
-		time.sleep(0.2)
-		print(speedCount)
+	while hadEvent:
+		if speedCount < 100:
+			speedCount = (speedCount + 10)
+			p.ChangeDutyCycle(speedCount)
+			time.sleep(0.2)
+			print(speedCount)
+		elif speedCount == 100:
+			p.ChangeDutyCycle(100)
+			time.sleep(0.2)
+			print(speedCount)
 	p.stop()
 	speedCount = 0
 	MotorOff()
