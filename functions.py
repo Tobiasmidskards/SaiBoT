@@ -148,8 +148,8 @@ try:
 			elif UP:
 				forward()
 		time.sleep(0.1)
-		window.fill(black)
-		pygame.draw.rect(window,white,(x,y,50,50))
+		screen.fill(black)
+		pygame.draw.rect(screen,white,(x,y,50,50))
 		pygame.display.flip()
 
 	stop()
