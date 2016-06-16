@@ -52,11 +52,11 @@ def acceleration(x):
 	global speedCount
 	p.start(speedCount)
 	global keydown
-	while keydown == True & speedCount < 100:
+	while keydown == True and speedCount < 100:
 		speedCount = (speedCount + 10)
 		p.ChangeDutyCycle(speedCount)
 		time.sleep(0.2)
-	while keydown == True & speedCount == 100:
+	while keydown == True and speedCount == 100:
 		p.ChangeDutyCycle(100)
 		time.sleep(0.2)
 	p.stop()
