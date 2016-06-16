@@ -32,6 +32,8 @@ def MotorOff():
 # Settings for JoyBorg
 leftDrive = DRIVE_1                     # Drive number for left motor
 rightDrive = DRIVE_4                    # Drive number for right motor
+leftStateCounter = DRIVE_2
+rightStateCounter = DRIVE_3
 axisUpDown = 1                          # Joystick axis to read for up / down position
 axisUpDownInverted = False 		# Set this to True if up and down appear to be swapped
 axisLeftRight = 0 			# Joystick axis to read for left / right position
@@ -129,23 +131,37 @@ try:
 			if moveQuit:
 				break
 			elif moveLeft:
-				leftState = GPIO.LOW
-				rightState = GPIO.HIGH
+				leftState = False
+				rightState = True
+				leftStateCounter = True
 				
 			elif moveRight:
-				leftState = GPIO.HIGH
-				rightState = GPIO.LOW
+				leftState = True
+				rightState = False
+				rightStateCounter = True
 				
 			elif moveUp:
-				leftState = GPIO.HIGH
-				rightState = GPIO.HIGH
+				leftState = True
+				rightState = True
+				leftStateCounter = False
+				rightStateCounter = False
 				
+			elif moveDown:
+				leftStateCounter = True
+				rightStateCounter = True
+				leftState = False
+				rightState = False
+			
 			else:
-				leftState = GPIO.LOW
-				rightState = GPIO.LOW
+				leftState = False
+				rightState = False
+				leftStateCounter = False
+				rightStateCounter = False
 				
 			GPIO.output(leftDrive, leftState)
 			GPIO.output(rightDrive, rightState)
+			GPIO.output(leftDriveCounter, rightStateCounter)
+			GPIO.output(rightDriveCounter, rightStateCounter)
 		# Wait for the interval period
 		time.sleep(interval)
 	# Disable all drives
