@@ -121,19 +121,20 @@ pygame.display.set_caption("JoyBorg - Press [ESC] to quit")
 
 def dist():
 	global distance
-	GPIO.output(12, True)
-	time.sleep(0.00001)
-	GPIO.output(12, False)
+	#GPIO.output(12, True)
+	#time.sleep(0.00001)
+	#GPIO.output(12, False)
 
-	while GPIO.input(echo) == 0:
-		noSignal = time.time()
+	#while GPIO.input(echo) == 0:
+	#	noSignal = time.time()
 
-	while GPIO.input(echo) == 1:
-		Signal = time.time()
+	#while GPIO.input(echo) == 1:
+	#	Signal = time.time()
 
-	difference = (Signal - noSignal)
+	#difference = (Signal - noSignal)
 
-	distance = difference / 0.000058
+	#distance = difference / 0.000058
+	distance = 16
 	return distance
 
 
