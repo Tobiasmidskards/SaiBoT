@@ -96,7 +96,6 @@ while running:
 	if(char == "d"): 
 		right() 
 		keydown = True
-	keydown = False
 	print(keydown)
 
 
