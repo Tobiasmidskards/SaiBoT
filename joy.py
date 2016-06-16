@@ -215,7 +215,7 @@ def PygameHandler(events):
 				
 
 try:
-	print 'Press [ESC] to quit'
+	print 'Press [X] to quit'
 	counter = 0
 	# Loop indefinitely
 	while True:
