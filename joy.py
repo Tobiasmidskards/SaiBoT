@@ -123,26 +123,6 @@ def PygameHandler(events):
 				moveRight = False
 				
 				
-def acceleration(channel):
-	global hadEvent
-	global speedCount
-	speedCount = 0
-	p = GPIO.PWM(channel , 50)
-	p.ChangeFrequency(100)
-	p.start(speedCount)
-	while hadEvent == True:
-		if speedCount < 100:
-			speedCount = (speedCount + 10)
-			p.ChangeDutyCycle(speedCount)
-			time.sleep(0.2)
-			print(speedCount)
-		elif speedCount == 100:
-			p.ChangeDutyCycle(100)
-			time.sleep(0.2)
-			print(speedCount)
-	p.stop()
-	speedCount = 0
-	MotorOff()
 
 try:
 	print 'Press [ESC] to quit'
@@ -152,7 +132,7 @@ try:
 		PygameHandler(pygame.event.get())
 		if hadEvent:
 			# Keys have changed, generate the command list based on keys
-			
+			hadEvent = False
 			if moveQuit:
 				break
 			elif moveLeft:
@@ -189,13 +169,10 @@ try:
 				rightStateCounter = False
 				print('Stop')
 				
-			#GPIO.output(leftDrive, leftState)
-			#GPIO.output(rightDrive, rightState)
-			#GPIO.output(leftDriveCounter, rightStateCounter)
-			#GPIO.output(rightDriveCounter, rightStateCounter)
-			acceleration(7)
-			print(hadEvent)
-			hadEvent = False
+			GPIO.output(leftDrive, leftState)
+			GPIO.output(rightDrive, rightState)
+			GPIO.output(leftDriveCounter, rightStateCounter)
+			GPIO.output(rightDriveCounter, rightStateCounter)
 			
 		# Wait for the interval period
 		time.sleep(interval)
