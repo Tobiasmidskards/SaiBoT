@@ -271,9 +271,6 @@ try:
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
-				if counter > 40:
-					print('There is connection - Dont worry')
-					counter = 0
 				
 			GPIO.output(leftDrive, leftState)
 			GPIO.output(rightDrive, rightState)
@@ -282,8 +279,11 @@ try:
 			
 		# Wait for the interval period
 		dist()
-		if counter == 10 or 20:
+		if counter == 20:
 			print 'The distance is:', distance
+		if counter > 40:
+			print('There is connection - Dont worry')
+			counter = 0
 			
 		time.sleep(interval)
 	# Disable all drives
