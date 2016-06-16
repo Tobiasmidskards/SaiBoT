@@ -5,7 +5,7 @@ import time
 # Controls the PWM speed.
 global level
 level = 0
-speed = 33
+current = 33
 
 def setboard():
 	GPIO.setmode(GPIO.BOARD)
@@ -29,16 +29,16 @@ def speed(level):
 	fourth.start(33)
 
 	if level == 0:
-		speed = 33
+		current = 33
 	elif level == 1:
-		speed = 66
+		current = 66
 	elif level == 2:
-		speed = 100
+		current = 100
 
-	first.ChangeDutyCycle(speed)
-	second.ChangeDutyCycle(speed)
-	third.ChangeDutyCycle(speed)
-	fourth.ChangeDutyCycle(speed)
+	first.ChangeDutyCycle(current)
+	second.ChangeDutyCycle(current)
+	third.ChangeDutyCycle(current)
+	fourth.ChangeDutyCycle(current)
 
 try:
 	print(speed)
@@ -47,7 +47,7 @@ try:
 		speed(1)
 
 	while True:
-		print(speed)
+		print(current)
 		time.sleep(1)
 except KeyboardInterrupt:
 	GPIO.cleanup()
