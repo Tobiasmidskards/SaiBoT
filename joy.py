@@ -222,6 +222,7 @@ try:
 				
 			elif squarePressed:
 				print('square virker!!')
+				squarePressed = False
 			
 			else:
 				leftState = False
