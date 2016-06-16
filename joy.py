@@ -9,10 +9,10 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # Set which GPIO pins the drive outputs are connected to
-DRIVE_1 = 4
-DRIVE_2 = 18
-DRIVE_3 = 8
-DRIVE_4 = 7
+DRIVE_1 = 9
+DRIVE_2 = 11
+DRIVE_3 = 13
+DRIVE_4 = 15
 
 # Set all of the drive pins as output pins
 GPIO.setup(DRIVE_1, GPIO.OUT)
@@ -125,19 +125,15 @@ try:
 			elif moveLeft:
 				leftState = GPIO.LOW
 				rightState = GPIO.HIGH
-				print('left')
 			elif moveRight:
 				leftState = GPIO.HIGH
 				rightState = GPIO.LOW
-				print('right')
 			elif moveUp:
 				leftState = GPIO.HIGH
 				rightState = GPIO.HIGH
-				print('up')
 			else:
 				leftState = GPIO.LOW
 				rightState = GPIO.LOW
-				print('down')
 			GPIO.output(leftDrive, leftState)
 			GPIO.output(rightDrive, rightState)
 		# Wait for the interval period
