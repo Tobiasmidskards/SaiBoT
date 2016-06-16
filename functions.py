@@ -99,6 +99,7 @@ def runGame():
 			print ('STOP')
 			#a
 
+runGame()
 
 GPIO.cleanup()
 
