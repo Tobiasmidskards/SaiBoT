@@ -70,6 +70,8 @@ RIGHT = 'right'
 LEFT = 'left'
 STOP = 'stop'
 
+pygame.init()
+
 def runGame():
 	direction = STOP
 	while True:
