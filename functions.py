@@ -83,8 +83,10 @@ while running:
 	global keydown
 
 	if(char == "w"): 
-		forward()
-		keydown = True
+		print('forward')
+		
+		#forward()
+		#keydown = True
 	if(char == "a"): 
 		left() 
 		keydown = True
