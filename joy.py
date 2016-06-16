@@ -71,6 +71,7 @@ def acceleration(channel):
 	p = GPIO.PWM(channel , 50)
 	p.ChangeFrequency(100)
 	p.start(speedCount)
+	hadEvent = True
 	while hadEvent:
 		if speedCount < 100:
 			speedCount = (speedCount + 10)
