@@ -225,7 +225,6 @@ try:
 			# Keys have changed, generate the command list based on keys
 			hadEvent = False
 			counter = (counter + 1)
-			global distance
 			
 			if moveQuit:
 				break
@@ -263,7 +262,7 @@ try:
 				print('Cross has been pressed')
 				moveQuit = True
 				
-			elif distance == distance < 15:
+			elif dist() < 15:
 				MotorOff()
 				print('For your safety - Motors has been disabled')
 				
