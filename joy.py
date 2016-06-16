@@ -48,6 +48,12 @@ level = 0
 current = 33
 speedTick = 0
 
+def Tick():
+	speedTick = (speedtick + 1)
+	if speedtick == 3:
+		speedTick = 0
+	speed(speedTick)
+
 def speed(level):
 	global current
 	first = GPIO.PWM(7, 100)
