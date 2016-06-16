@@ -163,12 +163,12 @@ try:
 				print('Right')
 				
 			elif moveUp:
-				#leftState = True
-				#rightState = True
-				#leftStateCounter = False
-				#rightStateCounter = False
+				leftState = True
+				rightState = True
+				leftStateCounter = False
+				rightStateCounter = False
 				print('Up')
-				acceleration(leftState)
+				
 				
 			elif moveDown:
 				leftStateCounter = True
@@ -184,10 +184,12 @@ try:
 				rightStateCounter = False
 				print('Stop')
 				
-			GPIO.output(leftDrive, leftState)
-			GPIO.output(rightDrive, rightState)
-			GPIO.output(leftDriveCounter, rightStateCounter)
-			GPIO.output(rightDriveCounter, rightStateCounter)
+			#GPIO.output(leftDrive, leftState)
+			#GPIO.output(rightDrive, rightState)
+			#GPIO.output(leftDriveCounter, rightStateCounter)
+			#GPIO.output(rightDriveCounter, rightStateCounter)
+			acceleration(leftDrive)
+			
 		# Wait for the interval period
 		time.sleep(interval)
 	# Disable all drives
