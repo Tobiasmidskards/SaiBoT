@@ -80,7 +80,7 @@ def acceleration(channel):
 		print(speedCount)
 	p.stop()
 	speedCount = 0
-	stop()
+	MotorOff()
 
 # Function to handle pygame events
 def PygameHandler(events):
