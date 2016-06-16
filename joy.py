@@ -129,9 +129,11 @@ try:
 			elif moveLeft:
 				leftState = GPIO.LOW
 				rightState = GPIO.HIGH
+				print('left')
 			elif moveRight:
 				leftState = GPIO.HIGH
 				rightState = GPIO.LOW
+				print('right')
 			elif moveUp:
 				leftState = GPIO.HIGH
 				rightState = GPIO.HIGH
