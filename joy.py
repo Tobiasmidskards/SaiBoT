@@ -5,7 +5,6 @@
 import time
 import pygame
 import RPi.GPIO as GPIO
-GPIO.cleanup()
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
@@ -171,7 +170,7 @@ try:
 				leftStateCounter = False
 				rightStateCounter = False
 				if counter > 30:
-					print('idle')
+					print('There is connection - Dont worry')
 					counter = 0
 				
 			GPIO.output(leftDrive, leftState)
@@ -186,3 +185,4 @@ try:
 except KeyboardInterrupt:
 	# CTRL+C exit, disable all drives
 	MotorOff()
+	GPIO.cleanup()
