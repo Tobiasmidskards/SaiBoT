@@ -34,6 +34,8 @@ def speed(level):
 		current = 66
 	elif level == 2:
 		current = 100
+	else:
+		print('doesnt work')
 
 	first.ChangeDutyCycle(current)
 	second.ChangeDutyCycle(current)
@@ -41,7 +43,7 @@ def speed(level):
 	fourth.ChangeDutyCycle(current)
 
 try:
-	print(speed)
+	print(current)
 	hastighed = input ('skriv hastigheden:')
 	if hastighed == 1:
 		speed(1)
