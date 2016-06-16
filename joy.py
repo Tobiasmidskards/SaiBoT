@@ -28,6 +28,7 @@ def MotorOff():
 	GPIO.output(DRIVE_2, GPIO.LOW)
 	GPIO.output(DRIVE_3, GPIO.LOW)
 	GPIO.output(DRIVE_4, GPIO.LOW)
+	
 
 # Settings for JoyBorg
 leftDrive = DRIVE_1                     # Drive number for left motor
@@ -40,6 +41,7 @@ axisLeftRight = 0 			# Joystick axis to read for left / right position
 axisLeftRightInverted = False 		# Set this to True if left and right appear to be swapped
 interval = 0.3 				# Time between keyboard updates in seconds, smaller responds faster but uses more processor time
 
+
 # Setup pygame and key states
 global hadEvent
 global moveUp
@@ -47,6 +49,10 @@ global moveDown
 global moveLeft
 global moveRight
 global moveQuit
+global speedCount
+
+speedCount = 0
+
 hadEvent = True
 moveUp = False
 moveDown = False
@@ -59,6 +65,23 @@ joystick = pygame.joystick.Joystick(0)
 joystick.init()
 screen = pygame.display.set_mode([300,300])
 pygame.display.set_caption("JoyBorg - Press [ESC] to quit")
+
+def acceleration(x):
+	p = GPIO.PWM(x , 50)
+	p.ChangeFrequency(100)
+	p.start(speedCount)
+	while hadEvent == True and speedCount < 100:
+		speedCount = (speedCount + 10)
+		p.ChangeDutyCycle(speedCount)
+		time.sleep(0.2)
+		print(speedCount)
+	while hadEvent == True and speedCount == 100:
+		p.ChangeDutyCycle(100)
+		time.sleep(0.2)
+		print(speedCount)
+	p.stop()
+	speedCount = 0
+	stop()
 
 # Function to handle pygame events
 def PygameHandler(events):
@@ -98,11 +121,9 @@ def PygameHandler(events):
 			# Determine Up / Down values
 			if upDown < -0.1:
 				moveUp = True
-				print('UP')
 				moveDown = False
 			elif upDown > 0.1:
 				moveUp = False
-				print('DOWN')
 				moveDown = True
 			else:
 				moveUp = False
@@ -110,15 +131,14 @@ def PygameHandler(events):
 			# Determine Left / Right values
 			if leftRight < -0.1:
 				moveLeft = True
-				print('LEFT')
 				moveRight = False
 			elif leftRight > 0.1:
 				moveLeft = False
-				print('RIGHT')
 				moveRight = True
 			else:
 				moveLeft = False
 				moveRight = False
+
 try:
 	print 'Press [ESC] to quit'
 	# Loop indefinitely
@@ -134,29 +154,35 @@ try:
 				leftState = False
 				rightState = True
 				rightStateCounter = True
+				print('Left')
 				
 			elif moveRight:
 				leftState = True
 				rightState = False
 				leftStateCounter = True
+				print('Right')
 				
 			elif moveUp:
-				leftState = True
-				rightState = True
-				leftStateCounter = False
-				rightStateCounter = False
+				#leftState = True
+				#rightState = True
+				#leftStateCounter = False
+				#rightStateCounter = False
+				print('Up')
+				acceleration(leftState)
 				
 			elif moveDown:
 				leftStateCounter = True
 				rightStateCounter = True
 				leftState = False
 				rightState = False
+				print('Down')
 			
 			else:
 				leftState = False
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
+				print('Stop')
 				
 			GPIO.output(leftDrive, leftState)
 			GPIO.output(rightDrive, rightState)
