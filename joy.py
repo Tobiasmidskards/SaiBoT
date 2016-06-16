@@ -142,7 +142,7 @@ def PygameHandler(events):
 				
 		elif event.type == pygame.JOYBUTTONUP:
 			hadEvent = True
-			if joystick.get_button(0) == True:
+			if joystick.get_button(0) == False:
 				squarePressed = False
 			
 		elif event.type == pygame.JOYAXISMOTION:
@@ -221,7 +221,7 @@ try:
 				print('Down')
 				
 			elif squarePressed:
-				print('square virker!!')
+				print('Square has been pressed')
 				squarePressed = False
 			
 			else:
