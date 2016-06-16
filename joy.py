@@ -49,6 +49,7 @@ current = 33
 speedTick = 0
 
 def Tick():
+	global speedTick
 	speedTick = (speedTick + 1)
 	if speedtick == 3:
 		speedTick = 0
