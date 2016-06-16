@@ -131,17 +131,19 @@ try:
 			elif moveLeft:
 				leftState = GPIO.LOW
 				rightState = GPIO.HIGH
-				print('left')
+				
 			elif moveRight:
 				leftState = GPIO.HIGH
 				rightState = GPIO.LOW
-				print('right')
+				
 			elif moveUp:
 				leftState = GPIO.HIGH
 				rightState = GPIO.HIGH
+				
 			else:
 				leftState = GPIO.LOW
 				rightState = GPIO.LOW
+				
 			GPIO.output(leftDrive, leftState)
 			GPIO.output(rightDrive, rightState)
 		# Wait for the interval period
