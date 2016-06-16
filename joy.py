@@ -54,6 +54,7 @@ def Tick():
 	if speedTick == 3:
 		speedTick = 0
 	speed(speedTick)
+	print(speedTick)
 
 def speed(level):
 	global current
@@ -80,6 +81,7 @@ def speed(level):
 	second.ChangeDutyCycle(current)
 	third.ChangeDutyCycle(current)
 	fourth.ChangeDutyCycle(current)
+	print(current)
 
 # Setup pygame and key states
 global hadEvent
