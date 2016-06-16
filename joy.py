@@ -133,12 +133,12 @@ try:
 			elif moveLeft:
 				leftState = False
 				rightState = True
-				leftStateCounter = True
+				rightStateCounter = True
 				
 			elif moveRight:
 				leftState = True
 				rightState = False
-				rightStateCounter = True
+				leftStateCounter = True
 				
 			elif moveUp:
 				leftState = True
