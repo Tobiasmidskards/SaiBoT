@@ -97,8 +97,9 @@ while running:
 		right() 
 		keydown = True
 	else:	
-		keydown = False
-		stop()
+		print('stop')
+		#keydown = False
+		#stop()
 
 
 GPIO.cleanup()
