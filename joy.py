@@ -261,7 +261,7 @@ try:
 			elif crossPressed:
 				print('Cross has been pressed')
 				moveQuit = True
-				
+			global distance
 			elif distance < 15:
 				MotorOff()
 				print('For your safety - Motors has been disabled')
