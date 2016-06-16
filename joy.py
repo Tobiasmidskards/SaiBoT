@@ -90,6 +90,7 @@ global moveRight
 global moveQuit
 global speedCount
 global squarePressed
+global CrossPressed
 
 hadEvent = True
 moveUp = False
@@ -98,6 +99,7 @@ moveLeft = False
 moveRight = False
 moveQuit = False
 squarePressed = False
+crossPressed = False
 
 pygame.init()
 pygame.joystick.init()
@@ -118,6 +120,7 @@ def PygameHandler(events):
 	global moveRight
 	global moveQuit
 	global squarePressed
+	global crossPressed
 	# Handle each event individually
 	for event in events:
 		if event.type == pygame.QUIT:
@@ -139,11 +142,15 @@ def PygameHandler(events):
 			hadEvent = True
 			if joystick.get_button(0) == True:
 				squarePressed = True
+			if joystick.get_button(1) == True:
+				crossPressed = True
 				
 		elif event.type == pygame.JOYBUTTONUP:
 			hadEvent = True
 			if joystick.get_button(0) == False:
 				squarePressed = False
+			if joystick.get_button(1) == False:
+				crossPressed = False
 			
 		elif event.type == pygame.JOYAXISMOTION:
 			# A joystick has been moved, read axis positions (-1 to +1)
@@ -222,7 +229,10 @@ try:
 				
 			elif squarePressed:
 				print('Square has been pressed')
-			
+				
+			elif crossPressed:
+				print('Cross has been pressed')
+				
 			else:
 				leftState = False
 				rightState = False
