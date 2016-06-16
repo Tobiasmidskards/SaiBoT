@@ -17,7 +17,7 @@ def setboard():
 
 setboard()
 
-def speed(level:str):
+def speed(level):
 	global current
 	first = GPIO.PWM(7, 100)
 	second = GPIO.PWM(11, 100)
@@ -29,11 +29,11 @@ def speed(level:str):
 	third.start(33)
 	fourth.start(33)
 
-	if level == '0':
+	if level == 0:
 		current = 33
-	elif level == '1':
+	elif level == 1:
 		current = 66
-	elif level == '2':
+	elif level == 2:
 		current = 100
 	else:
 		print('doesnt work')
@@ -50,7 +50,6 @@ try:
 		speed(1)
 
 	while True:
-		global current
 		print(current)
 		time.sleep(1)
 except KeyboardInterrupt:
