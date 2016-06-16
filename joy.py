@@ -57,11 +57,7 @@ def Tick():
 
 def speed(level):
 	global current
-	global first
-	global second
-	global third
-	global fourth
-	
+
 	first = GPIO.PWM(7, 100)
 	second = GPIO.PWM(11, 100)
 	third = GPIO.PWM(13, 100)
