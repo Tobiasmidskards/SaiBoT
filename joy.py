@@ -135,6 +135,7 @@ try:
 			hadEvent = False
 			counter = 0
 			counter = counter + 1
+			print(counter)
 			
 			if moveQuit:
 				break
@@ -170,7 +171,7 @@ try:
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
-				if counter == 30:
+				if counter > 30:
 					print('idle')
 					counter = 0
 				
