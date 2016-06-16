@@ -188,6 +188,7 @@ try:
 			#GPIO.output(leftDriveCounter, rightStateCounter)
 			#GPIO.output(rightDriveCounter, rightStateCounter)
 			acceleration(7)
+			print('speedCount')
 			
 		# Wait for the interval period
 		time.sleep(interval)
