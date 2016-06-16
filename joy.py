@@ -133,6 +133,9 @@ try:
 		if hadEvent:
 			# Keys have changed, generate the command list based on keys
 			hadEvent = False
+			counter = 0
+			counter = counter + 1
+			
 			if moveQuit:
 				break
 			elif moveLeft:
@@ -167,7 +170,9 @@ try:
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
-				print('Stop')
+				if counter == 30:
+					print('idle')
+					counter = 0
 				
 			GPIO.output(leftDrive, leftState)
 			GPIO.output(rightDrive, rightState)
