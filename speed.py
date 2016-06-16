@@ -46,8 +46,12 @@ def speed(level):
 try:
 	print(current)
 	hastighed = input ('skriv hastigheden:')
-	if hastighed == 1:
+	if hastighed == 0:
+		speed(0)
+	elif hastighed == 1:
 		speed(1)
+	else:
+		speed(2)
 
 	while True:
 		print(current)
