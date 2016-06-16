@@ -95,6 +95,7 @@ def runGame():
 			print ('UP') 
 		elif direction == STOP:
 			print ('STOP')
+			#a
 
 
 GPIO.cleanup()
