@@ -98,6 +98,7 @@ def runGame():
 		elif direction == STOP:
 			print ('STOP')
 			#a
+		time.sleep(0.5)
 
 runGame()
 
