@@ -256,6 +256,27 @@ try:
 				
 			elif squarePressed:
 				print('Square has been pressed')
+				print('Autonom mode is activated!')
+				print('Be aware! Alpha-testing')
+				while dist() > 15:
+					leftState = True
+					rightState = True
+					leftStateCounter = False
+					rightStateCounter = False
+					print('Up')
+				time.sleep(2)
+				leftStateCounter = True
+				rightStateCounter = True
+				leftState = False
+				rightState = False
+				print('Down')
+				time.sleep(2)
+				leftState = True
+				rightState = False
+				leftStateCounter = True
+				print('Right')
+				time.sleep(1)
+				
 				
 			elif crossPressed:
 				print('Cross has been pressed')
@@ -264,6 +285,7 @@ try:
 			elif dist() < 15:
 				MotorOff()
 				print('For your safety - Motors has been disabled')
+				
 				
 			else:
 				leftState = False
