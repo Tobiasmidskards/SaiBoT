@@ -216,34 +216,6 @@ def PygameHandler(events):
 try:
 	print 'Press [X] to quit'
 	counter = 0
-	
-	def goup():
-		leftState = True
-		rightState = True
-		leftStateCounter = False
-		rightStateCounter = False
-		print('Up')
-	
-	def godown():
-		leftStateCounter = True
-		rightStateCounter = True
-		leftState = False
-		rightState = False
-		print('Down')
-	
-	def goleft():
-		leftState = False
-		rightState = True
-		rightStateCounter = False
-		leftStateCounter = True
-		print('Left')
-		
-	def goright():
-		leftState = True
-		rightState = False
-		rightStateCounter = True
-		leftStateCounter = False
-		print('Right')
 		
 		
 	
@@ -259,16 +231,32 @@ try:
 			if moveQuit:
 				break
 			elif moveLeft:
-				goleft()
+				leftState = False
+				rightState = True
+				rightStateCounter = False
+				leftStateCounter = True
+				print('Left')
 
 			elif moveRight:
-				goright()
+				leftState = True
+				rightState = False
+				rightStateCounter = True
+				leftStateCounter = False
+				print('Right')
 				
 			elif moveUp:
-				goup()
+				leftState = True
+				rightState = True
+				leftStateCounter = False
+				rightStateCounter = False
+				print('Up')
 				
 			elif moveDown:
-				godown()
+				leftStateCounter = True
+				rightStateCounter = True
+				leftState = False
+				rightState = False
+				print('Down')
 				
 			elif squarePressed:
 				print('Square has been pressed')
