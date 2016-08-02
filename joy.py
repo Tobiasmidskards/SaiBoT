@@ -270,7 +270,7 @@ try:
 					print('Up')
 					GPIO.output(leftDrive, leftState)
 					GPIO.output(rightDrive, rightState)
-					GPIO.output(leftDriveCounter, rightStateCounter)
+					GPIO.output(leftDriveCounter, leftStateCounter)
 					GPIO.output(rightDriveCounter, rightStateCounter)
 				leftState = False
 				rightState = False
@@ -278,7 +278,7 @@ try:
 				rightStateCounter = False
 				GPIO.output(leftDrive, leftState)
 				GPIO.output(rightDrive, rightState)
-				GPIO.output(leftDriveCounter, rightStateCounter)
+				GPIO.output(leftDriveCounter, leftStateCounter)
 				GPIO.output(rightDriveCounter, rightStateCounter)
 				time.sleep(2)
 				leftStateCounter = True
@@ -287,7 +287,7 @@ try:
 				rightState = False
 				GPIO.output(leftDrive, leftState)
 				GPIO.output(rightDrive, rightState)
-				GPIO.output(leftDriveCounter, rightStateCounter)
+				GPIO.output(leftDriveCounter, leftStateCounter)
 				GPIO.output(rightDriveCounter, rightStateCounter)
 				print('Down')
 				time.sleep(2)
@@ -297,7 +297,7 @@ try:
 				rightStateCounter = False
 				GPIO.output(leftDrive, leftState)
 				GPIO.output(rightDrive, rightState)
-				GPIO.output(leftDriveCounter, rightStateCounter)
+				GPIO.output(leftDriveCounter, leftStateCounter)
 				GPIO.output(rightDriveCounter, rightStateCounter)
 				
 				leftState = False
@@ -313,9 +313,9 @@ try:
 				print('Right')
 				GPIO.output(leftDrive, leftState)
 				GPIO.output(rightDrive, rightState)
-				GPIO.output(leftDriveCounter, rightStateCounter)
+				GPIO.output(leftDriveCounter, leftStateCounter)
 				GPIO.output(rightDriveCounter, rightStateCounter)
-				time.sleep(2)
+				time.sleep(1)
 				leftState = False
 				rightState = False
 				leftStateCounter = False
