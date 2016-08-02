@@ -344,6 +344,8 @@ try:
 			
 		# Wait for the interval period
 		dist()
+		if counter == 10:
+			print 'The distance is:', distance
 		if counter == 20:
 			print 'The distance is:', distance
 		if counter > 40:
