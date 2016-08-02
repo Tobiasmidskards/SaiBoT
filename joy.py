@@ -216,6 +216,37 @@ def PygameHandler(events):
 try:
 	print 'Press [X] to quit'
 	counter = 0
+	
+	def goup():
+		leftState = True
+		rightState = True
+		leftStateCounter = False
+		rightStateCounter = False
+		print('Up')
+	
+	def godown():
+		leftStateCounter = True
+		rightStateCounter = True
+		leftState = False
+		rightState = False
+		print('Down')
+	
+	def goleft():
+		leftState = False
+		rightState = True
+		rightStateCounter = False
+		leftStateCounter = True
+		print('Left')
+		
+	def goright():
+		leftState = True
+		rightState = False
+		rightStateCounter = True
+		leftStateCounter = False
+		print('Right')
+		
+		
+	
 	# Loop indefinitely
 	while True:
 		# Get the currently pressed keys on the keyboard
@@ -228,37 +259,16 @@ try:
 			if moveQuit:
 				break
 			elif moveLeft:
-				leftState = False
-				rightState = True
-				rightStateCounter = False
-				leftStateCounter = True
-				print('Left')
+				goleft()
 
 			elif moveRight:
-				leftState = True
-				rightState = False
-				leftStateCounter = True
-				
-				leftState = True
-				rightState = False
-				rightStateCounter = True
-				leftStateCounter = False
-				print('Right')
+				goright()
 				
 			elif moveUp:
-				leftState = True
-				rightState = True
-				leftStateCounter = False
-				rightStateCounter = False
-				print('Up')
-				
+				goup()
 				
 			elif moveDown:
-				leftStateCounter = True
-				rightStateCounter = True
-				leftState = False
-				rightState = False
-				print('Down')
+				godown()
 				
 			elif squarePressed:
 				print('Square has been pressed')
