@@ -10,10 +10,10 @@ GPIO.setwarnings(False)
 
 
 # Set which GPIO pins the drive outputs are connected to
-DRIVE_1 = 15
-DRIVE_2 = 13
-DRIVE_3 = 7
-DRIVE_4 = 7
+DRIVE_1 = 7
+DRIVE_2 = 11
+DRIVE_3 = 13
+DRIVE_4 = 15
 
 # GPIO pins for distance
 trigger = 12
@@ -230,13 +230,19 @@ try:
 			elif moveLeft:
 				leftState = False
 				rightState = True
-				rightStateCounter = True
+				rightStateCounter = False
+				leftStateCounter = True
 				print('Left')
 
 			elif moveRight:
 				leftState = True
 				rightState = False
 				leftStateCounter = True
+				
+				leftState = True
+				rightState = False
+				rightStateCounter = True
+				leftStateCounter = False
 				print('Right')
 				
 			elif moveUp:
@@ -259,10 +265,10 @@ try:
 				print('Autonom mode is activated!')
 				print('Be aware! Alpha-testing')
 				while dist() > 15:
-					leftState = True
-					rightState = True
-					leftStateCounter = False
-					rightStateCounter = False
+					leftStateCounter = True
+					rightStateCounter = True
+					leftState = False
+					rightState = False
 					print('Up')
 					GPIO.output(leftDrive, leftState)
 					GPIO.output(rightDrive, rightState)
@@ -277,10 +283,10 @@ try:
 				GPIO.output(leftDriveCounter, rightStateCounter)
 				GPIO.output(rightDriveCounter, rightStateCounter)
 				time.sleep(2)
-				leftStateCounter = True
-				rightStateCounter = True
-				leftState = False
-				rightState = False
+				leftStateCounter = False
+				rightStateCounter = False
+				leftState = True
+				rightState = True
 				GPIO.output(leftDrive, leftState)
 				GPIO.output(rightDrive, rightState)
 				GPIO.output(leftDriveCounter, rightStateCounter)
@@ -296,15 +302,16 @@ try:
 				GPIO.output(leftDriveCounter, rightStateCounter)
 				GPIO.output(rightDriveCounter, rightStateCounter)
 				
-				leftState = True
-				rightState = False
+				leftState = False
+				rightState = True
 				leftStateCounter = True
+				rightStateCounter = False
 				print('Right')
 				GPIO.output(leftDrive, leftState)
 				GPIO.output(rightDrive, rightState)
 				GPIO.output(leftDriveCounter, rightStateCounter)
 				GPIO.output(rightDriveCounter, rightStateCounter)
-				time.sleep(1)
+				time.sleep(2)
 				leftState = False
 				rightState = False
 				leftStateCounter = False
