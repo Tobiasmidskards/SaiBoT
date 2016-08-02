@@ -264,6 +264,11 @@ try:
 					leftStateCounter = False
 					rightStateCounter = False
 					print('Up')
+				leftState = False
+				rightState = False
+				leftStateCounter = False
+				rightStateCounter = False
+				
 				time.sleep(2)
 				leftStateCounter = True
 				rightStateCounter = True
@@ -271,11 +276,20 @@ try:
 				rightState = False
 				print('Down')
 				time.sleep(2)
+				leftState = False
+				rightState = False
+				leftStateCounter = False
+				rightStateCounter = False
+				
 				leftState = True
 				rightState = False
 				leftStateCounter = True
 				print('Right')
 				time.sleep(1)
+				leftState = False
+				rightState = False
+				leftStateCounter = False
+				rightStateCounter = False
 				
 				
 			elif crossPressed:
