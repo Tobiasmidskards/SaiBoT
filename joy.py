@@ -348,6 +348,8 @@ try:
 			print 'The distance is:', distance
 		if counter == 20:
 			print 'The distance is:', distance
+		if counter == 30:
+			print 'The distance is:', distance
 		if counter > 40:
 			print('There is connection - Dont worry')
 			counter = 0
