@@ -333,7 +333,7 @@ try:
 				
 			GPIO.output(leftDrive, leftState)
 			GPIO.output(rightDrive, rightState)
-			GPIO.output(leftDriveCounter, rightStateCounter)
+			GPIO.output(leftDriveCounter, leftStateCounter)
 			GPIO.output(rightDriveCounter, rightStateCounter)
 			
 		# Wait for the interval period
