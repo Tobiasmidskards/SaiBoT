@@ -301,9 +301,15 @@ try:
 				GPIO.output(rightDriveCounter, rightStateCounter)
 				
 				leftState = False
-				rightState = True
-				leftStateCounter = True
+				rightState = False
+				leftStateCounter = False
 				rightStateCounter = False
+				
+				
+				leftState = True
+				rightState = False
+				leftStateCounter = False
+				rightStateCounter = True
 				print('Right')
 				GPIO.output(leftDrive, leftState)
 				GPIO.output(rightDrive, rightState)
