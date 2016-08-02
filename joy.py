@@ -10,10 +10,10 @@ GPIO.setwarnings(False)
 
 
 # Set which GPIO pins the drive outputs are connected to
-DRIVE_1 = 7
-DRIVE_2 = 11
-DRIVE_3 = 15
-DRIVE_4 = 13
+DRIVE_1 = 15
+DRIVE_2 = 13
+DRIVE_3 = 7
+DRIVE_4 = 7
 
 # GPIO pins for distance
 trigger = 12
