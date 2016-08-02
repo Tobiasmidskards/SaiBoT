@@ -264,27 +264,46 @@ try:
 					leftStateCounter = False
 					rightStateCounter = False
 					print('Up')
+					GPIO.output(leftDrive, leftState)
+					GPIO.output(rightDrive, rightState)
+					GPIO.output(leftDriveCounter, rightStateCounter)
+					GPIO.output(rightDriveCounter, rightStateCounter)
 				leftState = False
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
-				
+				GPIO.output(leftDrive, leftState)
+				GPIO.output(rightDrive, rightState)
+				GPIO.output(leftDriveCounter, rightStateCounter)
+				GPIO.output(rightDriveCounter, rightStateCounter)
 				time.sleep(2)
 				leftStateCounter = True
 				rightStateCounter = True
 				leftState = False
 				rightState = False
+				GPIO.output(leftDrive, leftState)
+				GPIO.output(rightDrive, rightState)
+				GPIO.output(leftDriveCounter, rightStateCounter)
+				GPIO.output(rightDriveCounter, rightStateCounter)
 				print('Down')
 				time.sleep(2)
 				leftState = False
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
+				GPIO.output(leftDrive, leftState)
+				GPIO.output(rightDrive, rightState)
+				GPIO.output(leftDriveCounter, rightStateCounter)
+				GPIO.output(rightDriveCounter, rightStateCounter)
 				
 				leftState = True
 				rightState = False
 				leftStateCounter = True
 				print('Right')
+				GPIO.output(leftDrive, leftState)
+				GPIO.output(rightDrive, rightState)
+				GPIO.output(leftDriveCounter, rightStateCounter)
+				GPIO.output(rightDriveCounter, rightStateCounter)
 				time.sleep(1)
 				leftState = False
 				rightState = False
