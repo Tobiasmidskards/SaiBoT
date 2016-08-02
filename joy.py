@@ -263,10 +263,10 @@ try:
 				print('Autonom mode is activated!')
 				print('Be aware! Alpha-testing')
 				while dist() > 15:
-					leftStateCounter = True
-					rightStateCounter = True
-					leftState = False
-					rightState = False
+					leftStateCounter = False
+					rightStateCounter = False
+					leftState = True
+					rightState = True
 					print('Up')
 					GPIO.output(leftDrive, leftState)
 					GPIO.output(rightDrive, rightState)
@@ -281,10 +281,10 @@ try:
 				GPIO.output(leftDriveCounter, rightStateCounter)
 				GPIO.output(rightDriveCounter, rightStateCounter)
 				time.sleep(2)
-				leftStateCounter = False
-				rightStateCounter = False
-				leftState = True
-				rightState = True
+				leftStateCounter = True
+				rightStateCounter = True
+				leftState = False
+				rightState = False
 				GPIO.output(leftDrive, leftState)
 				GPIO.output(rightDrive, rightState)
 				GPIO.output(leftDriveCounter, rightStateCounter)
