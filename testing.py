@@ -69,13 +69,13 @@ pygame.display.set_caption("SaiBot - Press [CTRL + C] to quit")
 def PygameHandler(events):
     # Variables accessible outside this function
     global hadEvent
-	global moveUp
-	global moveDown
-	global moveLeft
-	global moveRight
-	global moveQuit
-	global squarePressed
-	global crossPressed
+    global moveUp
+    global moveDown
+    global moveLeft
+    global moveRight
+    global moveQuit
+    global squarePressed
+    global crossPressed
 
     # Handles each event individually
     for event in events:
