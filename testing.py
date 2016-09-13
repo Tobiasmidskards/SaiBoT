@@ -14,6 +14,25 @@ DRIVE_2 = 11
 DRIVE_3 = 13
 DRIVE_4 = 15
 
+def speed(current):
+	global current
+	first = True
+	if first == True
+		first = GPIO.PWM(7, 100)
+		second = GPIO.PWM(11, 100)
+		third = GPIO.PWM(13, 100)
+		fourth = GPIO.PWM(15, 100)
+		first = False
+
+
+		first.start(33)
+		second.start(33)
+		third.start(33)
+		fourth.start(33)
+
+	first.ChangeDutyCycle(current)
+
+	third.ChangeDutyCycle(current)
 
 
 
@@ -24,14 +43,13 @@ GPIO.setup(DRIVE_3, GPIO.OUT)
 GPIO.setup(DRIVE_4, GPIO.OUT)
 
 
-
 # Function to set all drives off
 def MotorOff():
 	GPIO.output(DRIVE_1, GPIO.LOW)
 	GPIO.output(DRIVE_2, GPIO.LOW)
 	GPIO.output(DRIVE_3, GPIO.LOW)
 	GPIO.output(DRIVE_4, GPIO.LOW)
-	
+
 
 # Settings for JoyBorg
 leftDrive = DRIVE_1                     # Drive number for left motor
@@ -149,14 +167,14 @@ def PygameHandler(events):
 				squarePressed = True
 			if joystick.get_button(1) == True:
 				crossPressed = True
-				
+
 		elif event.type == pygame.JOYBUTTONUP:
 			hadEvent = True
 			if joystick.get_button(0) == False:
 				squarePressed = False
 			if joystick.get_button(1) == False:
 				crossPressed = False
-			
+
 		elif event.type == pygame.JOYAXISMOTION:
 			# A joystick has been moved, read axis positions (-1 to +1)
 			hadEvent = True
@@ -187,19 +205,19 @@ def PygameHandler(events):
 			else:
 				moveLeft = False
 				moveRight = False
-			
+
 			print (upDown)
 			print (leftRight)
-		
-				
-				
+
+
+
 
 try:
 	print 'Press [X] to quit'
 	counter = 0
-		
-		
-	
+
+
+
 	# Loop indefinitely
 	while True:
 		# Get the currently pressed keys on the keyboard
@@ -208,7 +226,7 @@ try:
 			# Keys have changed, generate the command list based on keys
 			hadEvent = False
 			counter = (counter + 1)
-			
+
 			if moveQuit:
 				break
 			elif moveLeft:
@@ -224,48 +242,49 @@ try:
 				rightStateCounter = True
 				leftStateCounter = False
 				print('Right')
-				
+
 			elif moveUp:
-				leftState = True
-				rightState = True
+				#leftState = True
+				#rightState = True
+				speed(upDown)
 				leftStateCounter = False
 				rightStateCounter = False
 				print('Up')
-				
+
 			elif moveDown:
 				leftStateCounter = True
 				rightStateCounter = True
 				leftState = False
 				rightState = False
 				print('Down')
-				
-			
-				
-				
+
+
+
+
 			elif crossPressed:
 				print('Cross has been pressed')
 				moveQuit = True
-				
 
-				
-				
+
+
+
 			else:
 				leftState = False
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
-				
+
 			GPIO.output(leftDrive, leftState)
 			GPIO.output(rightDrive, rightState)
 			GPIO.output(leftDriveCounter, leftStateCounter)
 			GPIO.output(rightDriveCounter, rightStateCounter)
-			
+
 		# Wait for the interval period
 
 		if counter > 40:
 			print('There is connection - Dont worry')
 			counter = 0
-			
+
 		time.sleep(interval)
 	# Disable all drives
 	MotorOff()
@@ -273,4 +292,3 @@ except KeyboardInterrupt:
 	# CTRL+C exit, disable all drives
 	MotorOff()
 	GPIO.cleanup()
-
