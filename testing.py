@@ -123,7 +123,7 @@ def PygameHandler(events):
 
             		print (upDown)
             		print (leftRight)
-			''' 
+			 
             # only 4 ways output
 			# Determine Up / Down values
 			if upDown < -0.1:
@@ -145,7 +145,7 @@ def PygameHandler(events):
 			else:
 				moveLeft = False
 				moveRight = False
-            '''
+            
 
 # Testing with PWD
 try:
