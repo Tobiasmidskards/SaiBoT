@@ -23,6 +23,7 @@ GPIO.setup(DRIVE_3, GPIO.OUT)
 GPIO.setup(DRIVE_4, GPIO.OUT)
 
 
+
 # Function to set all drives off
 def MotorOff():
 	GPIO.output(DRIVE_1, GPIO.LOW)
@@ -94,7 +95,6 @@ global moveQuit
 global speedCount
 global squarePressed
 global CrossPressed
-global distance
 
 hadEvent = True
 moveUp = False
@@ -111,6 +111,7 @@ joystick = pygame.joystick.Joystick(0)
 joystick.init()
 screen = pygame.display.set_mode([300,300])
 pygame.display.set_caption("JoyBorg - Press [ESC] to quit")
+
 
 
 # Function to handle pygame events
@@ -234,12 +235,19 @@ try:
 				rightState = False
 				print('Down')
 				
-			
+				
+			else:
+				leftState = False
+				rightState = False
+				leftStateCounter = False
+				rightStateCounter = False
+				
+			GPIO.output(leftDrive, leftState)
+			GPIO.output(rightDrive, rightState)
+			GPIO.output(leftDriveCounter, leftStateCounter)
+			GPIO.output(rightDriveCounter, rightStateCounter)
 			
 		# Wait for the interval period
-		if counter > 40:
-			print('There is connection - Dont worry')
-			counter = 0
 			
 		time.sleep(interval)
 	# Disable all drives
