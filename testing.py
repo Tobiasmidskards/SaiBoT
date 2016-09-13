@@ -1,21 +1,3 @@
-Skip to content
-This repository
-Pull requests
-Issues
-Gist
- @Tobiasmidskards
- Unwatch 1
-  Unstar 1
-  Fork 0 Tobiasmidskards/SaiBoT
- Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs  Settings
-Branch: master Find file Copy pathSaiBoT/joy.py
-1558a22  on Aug 2
-@Tobiasmidskards Tobiasmidskards Update joy.py
-1 contributor
-RawBlameHistory     364 lines (314 sloc)  8.5 KB
-#!/usr/bin/env python
-# coding: Latin-1
-
 # Load library functions we want
 import time
 import pygame
