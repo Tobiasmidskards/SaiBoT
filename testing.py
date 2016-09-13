@@ -1,3 +1,5 @@
+#lol
+
 # Load library functions we want
 import time
 import pygame
