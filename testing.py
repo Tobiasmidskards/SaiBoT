@@ -177,6 +177,7 @@ def PygameHandler(events):
 		elif event.type == pygame.JOYAXISMOTION:
 			# A joystick has been moved, read axis positions (-1 to +1)
 			hadEvent = True
+			global upDown
 			upDown = joystick.get_axis(axisUpDown)
 			leftRight = joystick.get_axis(2)
 			# Invert any axes which are incorrect
@@ -207,7 +208,6 @@ def PygameHandler(events):
 
 			print (upDown)
 			print (leftRight)
-			speed(upDown)
 
 
 
@@ -219,6 +219,7 @@ try:
 
 	# Loop indefinitely
 	while True:
+		global upDown
 		# Get the currently pressed keys on the keyboard
 		PygameHandler(pygame.event.get())
 		if hadEvent:
