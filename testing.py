@@ -89,10 +89,10 @@ def PygameHandler(events):
 			if event.key == pygame.K_ESCAPE:
 				moveQuit = True
         elif event.type == pygame.KEYUP:
-			# A key has been released, see if it is one we want
-			hadEvent = True
-			if event.key == pygame.K_ESCAPE:
-				moveQuit = False
+		# A key has been released, see if it is one we want
+		hadEvent = True
+		if event.key == pygame.K_ESCAPE:
+			moveQuit = False
 				
 		elif event.type == pygame.JOYBUTTONDOWN:
 			# a button has been pressed
