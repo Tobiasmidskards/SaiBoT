@@ -207,7 +207,7 @@ def PygameHandler(events):
 
 			print (upDown)
 			print (leftRight)
-
+			speed(upDown)
 
 
 
