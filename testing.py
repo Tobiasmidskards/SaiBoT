@@ -121,8 +121,8 @@ def PygameHandler(events):
 			if axisLeftRightInverted:
 				leftRight = -leftRight
 
-            print (upDown)
-            print (leftRight)
+            		print (upDown)
+            		print (leftRight)
 			''' 
             # only 4 ways output
 			# Determine Up / Down values
