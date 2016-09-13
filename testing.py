@@ -241,9 +241,7 @@ try:
 				print('Cross has been pressed')
 				moveQuit = True
 				
-			elif dist() < 15:
-				MotorOff()
-				print('For your safety - Motors has been disabled')
+
 				
 				
 			else:
