@@ -1,6 +1,7 @@
 # Loading library functions
 import time 
-import pygameimport RPi.GPIO as GPIO
+import pygame
+import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
