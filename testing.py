@@ -29,9 +29,9 @@ def speed(current):
 		third.start(33)
 		fourth.start(33)
 
-	first.ChangeDutyCycle(current)
+	first.ChangeDutyCycle(current*100)
 
-	third.ChangeDutyCycle(current)
+	third.ChangeDutyCycle(current*100)
 
 
 
