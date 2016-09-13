@@ -20,10 +20,10 @@ GPIO.setup(Drive_4, GPIO.OUT)
 # Functions
 # Set all as off
 def MotorOff():
-	GPIO.output(DRIVE_1, GPIO.LOW)
-	GPIO.output(DRIVE_2, GPIO.LOW)
-	GPIO.output(DRIVE_3, GPIO.LOW)
-	GPIO.output(DRIVE_4, GPIO.LOW)
+	GPIO.output(Drive_1, GPIO.LOW)
+	GPIO.output(Drive_2, GPIO.LOW)
+	GPIO.output(Drive_3, GPIO.LOW)
+	GPIO.output(Drive_4, GPIO.LOW)
 
 # Settings for joystick  
 forward_left = Drive_1
