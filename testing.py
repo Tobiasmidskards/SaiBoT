@@ -15,7 +15,6 @@ DRIVE_3 = 13
 DRIVE_4 = 15
 
 def speed(current):
-	global current
 	first = True
 	if first == True:
 		first = GPIO.PWM(7, 100)
