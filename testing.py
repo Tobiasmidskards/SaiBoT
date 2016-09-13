@@ -177,7 +177,6 @@ def PygameHandler(events):
 		elif event.type == pygame.JOYAXISMOTION:
 			# A joystick has been moved, read axis positions (-1 to +1)
 			hadEvent = True
-			global upDown
 			upDown = joystick.get_axis(axisUpDown)
 			leftRight = joystick.get_axis(2)
 			# Invert any axes which are incorrect
@@ -244,9 +243,8 @@ try:
 				print('Right')
 
 			elif moveUp:
-				#leftState = True
-				#rightState = True
-				speed(upDown)
+				leftState = True
+				rightState = True
 				leftStateCounter = False
 				rightStateCounter = False
 				print('Up')
