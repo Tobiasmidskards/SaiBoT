@@ -185,6 +185,8 @@ def PygameHandler(events):
 			else:
 				moveLeft = False
 				moveRight = False
+			print (upDown)
+			print (moveUp)
 		
 				
 				
