@@ -29,7 +29,7 @@ def MotorOff():
 forward_left = Drive_1
 forward_right = Drive_4
 backward_left = Drive_2
-backward_left = Drive_3
+backward_right = Drive_3
 
 axisUpDown = 1                          # Joystick axis to read for up / down position
 axisUpDownInverted = False 		# Set this to True if up and down appear to be swapped
@@ -198,10 +198,10 @@ try:
 				leftStateCounter = False
 				rightStateCounter = False
 				
-			GPIO.output(leftDrive, leftState)
-			GPIO.output(rightDrive, rightState)
-			GPIO.output(leftDriveCounter, leftStateCounter)
-			GPIO.output(rightDriveCounter, rightStateCounter)
+			GPIO.output(forward_left, leftState)
+			GPIO.output(forward_right, rightState)
+			GPIO.output(backward_left, leftStateCounter)
+			GPIO.output(backward_right, rightStateCounter)
 			
 		# Wait for the interval period
 			
