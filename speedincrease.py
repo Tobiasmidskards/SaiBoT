@@ -34,8 +34,8 @@ def speed():
 	print("started - waiting 3 sec")
 	time.sleep(3)
 	for i in range (0,100):
-		current = current - 1
-		time.sleep(0.5)
+		current = current - 5
+		time.sleep(1)
 		first.ChangeDutyCycle(current)
 		MotorOff()
 		print (current)
