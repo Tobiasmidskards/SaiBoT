@@ -21,7 +21,7 @@ leftb.start(0)              # red fully on (100%)
 rightf.start(0)              # start white led on 0 percent duty cycle (off)
 rightb.start(0)              # red fully on (100%)
 
-#
+###
 # now the fun starts, we'll vary the duty cycle to
 # dim/brighten the leds, so one is bright while the other is dim
 
