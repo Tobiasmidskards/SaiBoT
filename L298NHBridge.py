@@ -26,7 +26,7 @@ io.setwarnings(False)
 # Here we configure the GPIO settings for the left and right motors spinning direction.
 # It defines the four GPIO pins used as input on the L298 H-Bridge to set the motor mode (forward, reverse and stopp).
 
-leftmotor_in1_pin = 9
+leftmotor_in1_pin = 7
 leftmotor_in2_pin = 11
 io.setup(leftmotor_in1_pin, io.OUT)
 io.setup(leftmotor_in2_pin, io.OUT)
@@ -44,7 +44,7 @@ io.output(rightmotor_in2_pin, False)
 # Here we configure the GPIO settings for the left and right motors spinning speed.
 # It defines the two GPIO pins used as input on the L298 H-Bridge to set the motor speed with a PWM signal.
 
-leftmotorpwm_pin = 9
+leftmotorpwm_pin = 7
 rightmotorpwm_pin = 13
 
 io.setup(leftmotorpwm_pin, io.OUT)
