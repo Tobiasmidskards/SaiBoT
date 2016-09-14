@@ -33,7 +33,7 @@ def speed():
 	fourth.start(33)
 
 	time.sleep(3)
-	for i in 100:
+	for i in range (0,100):
 		current = current + 1
 		time.sleep(0.5)
 		first.ChangeDutyCycle(current)
