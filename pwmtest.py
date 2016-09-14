@@ -24,7 +24,7 @@ try:
             #red.ChangeDutyCycle(100 - i)
             sleep(pause_time)
         white.ChangeDutyCycle(0)
-
+        sleep(1)
         for i in range(100,-1,-1):      # from 100 to zero in steps of -1
             #white.ChangeDutyCycle(i)
             red.ChangeDutyCycle(100 - i)
