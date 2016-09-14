@@ -16,10 +16,10 @@ rightf = GPIO.PWM(15, 100)    # create object white for PWM on port 25 at 100 He
 rightb = GPIO.PWM(13, 100)      # create object red for PWM on port 24 at 100 Hertz
 print('--')
 leftf.start(0)              # start white led on 0 percent duty cycle (off)
-leftb.start(100)              # red fully on (100%)
+leftb.start(0)              # red fully on (100%)
 print('--')
 rightf.start(0)              # start white led on 0 percent duty cycle (off)
-rightb.start(100)              # red fully on (100%)
+rightb.start(0)              # red fully on (100%)
 print('--')
 # now the fun starts, we'll vary the duty cycle to
 # dim/brighten the leds, so one is bright while the other is dim
