@@ -11,8 +11,8 @@ GPIO.setup(15, GPIO.OUT)# set GPIO 24 as output for red led
 leftf = GPIO.PWM(7, 100)    # create object white for PWM on port 25 at 100 Hertz
 leftb = GPIO.PWM(11, 100)      # create object red for PWM on port 24 at 100 Hertz
 
-rightf = GPIO.PWM(13, 100)    # create object white for PWM on port 25 at 100 Hertz
-rightb = GPIO.PWM(15, 100)      # create object red for PWM on port 24 at 100 Hertz
+rightf = GPIO.PWM(15, 100)    # create object white for PWM on port 25 at 100 Hertz
+rightb = GPIO.PWM(13, 100)      # create object red for PWM on port 24 at 100 Hertz
 
 leftf.start(0)              # start white led on 0 percent duty cycle (off)
 leftb.start(100)              # red fully on (100%)
