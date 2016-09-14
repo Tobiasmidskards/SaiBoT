@@ -8,29 +8,27 @@ GPIO.setup(11, GPIO.OUT)# set GPIO 24 as output for red led
 GPIO.setup(13, GPIO.OUT)# set GPIO 25 as output for white led
 GPIO.setup(15, GPIO.OUT)# set GPIO 24 as output for red led
 
-print('--')
+
 leftf = GPIO.PWM(7, 100)    # create object white for PWM on port 25 at 100 Hertz
 leftb = GPIO.PWM(11, 100)      # create object red for PWM on port 24 at 100 Hertz
-print('--')
-rightf = GPIO.PWM(15, 100)    # create object white for PWM on port 25 at 100 Hertz
-rightb = GPIO.PWM(13, 100)      # create object red for PWM on port 24 at 100 Hertz
-print('--')
+
+rightf = GPIO.PWM(13, 100)    # create object white for PWM on port 25 at 100 Hertz
+rightb = GPIO.PWM(15, 100)      # create object red for PWM on port 24 at 100 Hertz
+
 leftf.start(0)              # start white led on 0 percent duty cycle (off)
 leftb.start(0)              # red fully on (100%)
-print('--')
+
 rightf.start(0)              # start white led on 0 percent duty cycle (off)
 rightb.start(0)              # red fully on (100%)
-print('--')
+
 # now the fun starts, we'll vary the duty cycle to
 # dim/brighten the leds, so one is bright while the other is dim
-print('--')
+
 pause_time = 0.02           # you can change this to slow down/speed up
-print('--')
+
 sleep(1)
 try:
-    print('--1111')
     while True:
-        print('--2222')
         for i in range(0,101):      # 101 because it stops when it finishes 100
             leftf.ChangeDutyCycle(i)
             rightf.ChangeDutyCycle(i)
@@ -49,6 +47,8 @@ try:
         sleep(1)
 
 except KeyboardInterrupt:
-    white.stop()            # stop the white PWM output
-    red.stop()              # stop the red PWM output
+    leftf.stop()            # stop the white PWM output
+    leftb.stop()
+    rightf.stop()
+    rightb.stop()              # stop the red PWM output
     GPIO.cleanup()          # clean up GPIO on CTRL+C exit
