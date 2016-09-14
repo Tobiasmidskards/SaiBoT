@@ -4,13 +4,15 @@ import time
 
 GPIO.setwarnings(False)
 
-GPIO.setup(DRIVE_1, GPIO.OUT)
-GPIO.setup(DRIVE_2, GPIO.OUT)
-GPIO.setup(DRIVE_3, GPIO.OUT)
-GPIO.setup(DRIVE_4, GPIO.OUT)
+def setboard():
+	GPIO.setmode(GPIO.BOARD)
+	GPIO.setup(7, GPIO.OUT)  # MOTOR 1-7
+	GPIO.setup(11,GPIO.OUT)  # MOTOR 2-11
+	GPIO.setup(13,GPIO.OUT)  # MOTOR 3-13
+	GPIO.setup(15,GPIO.OUT)  # MOTOR 4-15
 
-GPIO.setup(trigger, GPIO.OUT)
-GPIO.setup(echo, GPIO.IN)
+	GPIO.setup(12,GPIO.OUT)  # DISTANCE TRIGGER
+	GPIO.setup(16, GPIO.IN)  # DISTANCE ECHO
 
 def MotorOff():
 	GPIO.output(DRIVE_1, GPIO.LOW)
