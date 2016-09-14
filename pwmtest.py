@@ -8,23 +8,24 @@ GPIO.setup(11, GPIO.OUT)# set GPIO 24 as output for red led
 GPIO.setup(13, GPIO.OUT)# set GPIO 25 as output for white led
 GPIO.setup(15, GPIO.OUT)# set GPIO 24 as output for red led
 
+print('--')
 leftf = GPIO.PWM(7, 100)    # create object white for PWM on port 25 at 100 Hertz
 leftb = GPIO.PWM(11, 100)      # create object red for PWM on port 24 at 100 Hertz
-
+print('--')
 rightf = GPIO.PWM(15, 100)    # create object white for PWM on port 25 at 100 Hertz
 rightb = GPIO.PWM(13, 100)      # create object red for PWM on port 24 at 100 Hertz
-
+print('--')
 leftf.start(0)              # start white led on 0 percent duty cycle (off)
 leftb.start(100)              # red fully on (100%)
-
+print('--')
 rightf.start(0)              # start white led on 0 percent duty cycle (off)
 rightb.start(100)              # red fully on (100%)
-
+print('--')
 # now the fun starts, we'll vary the duty cycle to
 # dim/brighten the leds, so one is bright while the other is dim
-
+print('--')
 pause_time = 0.02           # you can change this to slow down/speed up
-
+print('--')
 try:
     while True:
         for i in range(0,101):      # 101 because it stops when it finishes 100
