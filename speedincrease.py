@@ -23,17 +23,16 @@ def MotorOff():
 def speed():
 	global current
 	current = 100
-	first = GPIO.PWM(7, 100)
-	second = GPIO.PWM(11, 100)
-	third = GPIO.PWM(13, 100)
-	fourth = GPIO.PWM(15, 100)
-	first.start(33)
-	second.start(33)
-	third.start(33)
-	fourth.start(33)
-	print("started - waiting 3 sec")
-	time.sleep(3)
+
 	for i in range (0,100):
+		first = GPIO.PWM(7, 100)
+		second = GPIO.PWM(11, 100)
+		third = GPIO.PWM(13, 100)
+		fourth = GPIO.PWM(15, 100)
+		first.start(33)
+		second.start(33)
+		third.start(33)
+		fourth.start(33)
 		current = current - 5
 		time.sleep(1)
 		first.ChangeDutyCycle(current)
