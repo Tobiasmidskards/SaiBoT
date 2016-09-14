@@ -34,7 +34,7 @@ def speed(level):
 	for i in 100:
 		current = current + 1
 		time.sleep(0.5)
-	    first.ChangeDutyCycle(current)
+		first.ChangeDutyCycle(current)
 
 	MotorOff()
 	PIO.cleanup()
