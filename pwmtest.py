@@ -37,7 +37,9 @@ try:
             sleep(pause_time)
         leftf.ChangeDutyCycle(0)
         rightf.ChangeDutyCycle(0)
-        sleep(1)
+        sleep(2)
+
+        
         for i in range(100,-1,-1):      # from 100 to zero in steps of -1
             #white.ChangeDutyCycle(i)
             leftb.ChangeDutyCycle(100 - i)
