@@ -30,6 +30,7 @@ try:
             red.ChangeDutyCycle(100 - i)
             sleep(pause_time)
         red.ChangeDutyCycle(0)
+        sleep(1)
 
 except KeyboardInterrupt:
     white.stop()            # stop the white PWM output
