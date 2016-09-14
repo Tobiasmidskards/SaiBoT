@@ -20,7 +20,7 @@ def MotorOff():
 	GPIO.output(DRIVE_3, GPIO.LOW)
 	GPIO.output(DRIVE_4, GPIO.LOW)
 
-def speed(level):
+def speed():
 	global current
 	current = 0
 	first = GPIO.PWM(7, 100)
@@ -40,3 +40,6 @@ def speed(level):
 
 	MotorOff()
 	PIO.cleanup()
+
+setboard()
+speed()
