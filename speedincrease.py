@@ -37,6 +37,7 @@ def speed():
 		current = current + 1
 		time.sleep(0.5)
 		first.ChangeDutyCycle(current)
+		MotorOff()
 		print (current)
 
 	MotorOff()
