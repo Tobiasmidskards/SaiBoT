@@ -1,7 +1,10 @@
 import pygame
 import RPi.GPIO as GPIO
 import time
+import webiopi
 
+webiopi.setDebug()
+GPIO = webiopi.GPIO
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 
