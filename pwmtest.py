@@ -27,7 +27,9 @@ print('--')
 pause_time = 0.02           # you can change this to slow down/speed up
 print('--')
 try:
+    print('--1111')
     while True:
+        print('--2222')
         for i in range(0,101):      # 101 because it stops when it finishes 100
             leftf.ChangeDutyCycle(i)
             rightf.ChangeDutyCycle(i)
