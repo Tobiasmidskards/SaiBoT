@@ -15,10 +15,10 @@ def setboard():
 	GPIO.setup(16, GPIO.IN)  # DISTANCE ECHO
 
 def MotorOff():
-	GPIO.output(DRIVE_1, GPIO.LOW)
-	GPIO.output(DRIVE_2, GPIO.LOW)
-	GPIO.output(DRIVE_3, GPIO.LOW)
-	GPIO.output(DRIVE_4, GPIO.LOW)
+	GPIO.output(7, GPIO.LOW)
+	GPIO.output(11, GPIO.LOW)
+	GPIO.output(13, GPIO.LOW)
+	GPIO.output(15, GPIO.LOW)
 
 def speed():
 	global current
