@@ -21,14 +21,15 @@ try:
     while True:
         for i in range(0,101):      # 101 because it stops when it finishes 100
             white.ChangeDutyCycle(i)
-            red.ChangeDutyCycle(100 - i)
+            #red.ChangeDutyCycle(100 - i)
             sleep(pause_time)
-
+        white.ChangeDutyCycle(0)
 
         for i in range(100,-1,-1):      # from 100 to zero in steps of -1
-            white.ChangeDutyCycle(i)
+            #white.ChangeDutyCycle(i)
             red.ChangeDutyCycle(100 - i)
             sleep(pause_time)
+        red.ChangeDutyCycle(0)
 
 except KeyboardInterrupt:
     white.stop()            # stop the white PWM output
