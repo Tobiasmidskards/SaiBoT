@@ -26,6 +26,7 @@ print('--')
 print('--')
 pause_time = 0.02           # you can change this to slow down/speed up
 print('--')
+sleep(1)
 try:
     print('--1111')
     while True:
