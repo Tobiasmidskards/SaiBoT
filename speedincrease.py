@@ -31,12 +31,13 @@ def speed():
 	second.start(33)
 	third.start(33)
 	fourth.start(33)
-
+	print("started - waiting 3 sec")
 	time.sleep(3)
 	for i in range (0,100):
 		current = current + 1
 		time.sleep(0.5)
 		first.ChangeDutyCycle(current)
+		print (current)
 
 	MotorOff()
 	PIO.cleanup()
