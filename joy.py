@@ -36,7 +36,7 @@ def MotorOff():
 	GPIO.output(DRIVE_2, GPIO.LOW)
 	GPIO.output(DRIVE_3, GPIO.LOW)
 	GPIO.output(DRIVE_4, GPIO.LOW)
-	
+
 
 # Settings for JoyBorg
 leftDrive = DRIVE_1                     # Drive number for left motor
@@ -121,6 +121,8 @@ pygame.display.set_caption("JoyBorg - Press [ESC] to quit")
 
 def dist():
 	global distance
+	global noSignal
+	global Signal
 	GPIO.output(12, True)
 	time.sleep(0.00001)
 	GPIO.output(12, False)
@@ -171,14 +173,14 @@ def PygameHandler(events):
 				squarePressed = True
 			if joystick.get_button(1) == True:
 				crossPressed = True
-				
+
 		elif event.type == pygame.JOYBUTTONUP:
 			hadEvent = True
 			if joystick.get_button(0) == False:
 				squarePressed = False
 			if joystick.get_button(1) == False:
 				crossPressed = False
-			
+
 		elif event.type == pygame.JOYAXISMOTION:
 			# A joystick has been moved, read axis positions (-1 to +1)
 			hadEvent = True
@@ -209,16 +211,16 @@ def PygameHandler(events):
 			else:
 				moveLeft = False
 				moveRight = False
-		
-				
-				
+
+
+
 
 try:
 	print 'Press [X] to quit'
 	counter = 0
-		
-		
-	
+
+
+
 	# Loop indefinitely
 	while True:
 		# Get the currently pressed keys on the keyboard
@@ -227,7 +229,7 @@ try:
 			# Keys have changed, generate the command list based on keys
 			hadEvent = False
 			counter = (counter + 1)
-			
+
 			if moveQuit:
 				break
 			elif moveLeft:
@@ -243,21 +245,21 @@ try:
 				rightStateCounter = True
 				leftStateCounter = False
 				print('Right')
-				
+
 			elif moveUp:
 				leftState = True
 				rightState = True
 				leftStateCounter = False
 				rightStateCounter = False
 				print('Up')
-				
+
 			elif moveDown:
 				leftStateCounter = True
 				rightStateCounter = True
 				leftState = False
 				rightState = False
 				print('Down')
-				
+
 			elif squarePressed:
 				print('Square has been pressed')
 				print('Autonom mode is activated!')
@@ -299,13 +301,13 @@ try:
 				GPIO.output(rightDrive, rightState)
 				GPIO.output(leftDriveCounter, leftStateCounter)
 				GPIO.output(rightDriveCounter, rightStateCounter)
-				
+
 				leftState = False
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
-				
-				
+
+
 				leftState = True
 				rightState = False
 				leftStateCounter = False
@@ -320,28 +322,28 @@ try:
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
-				
-				
+
+
 			elif crossPressed:
 				print('Cross has been pressed')
 				moveQuit = True
-				
+
 			elif dist() < 15:
 				MotorOff()
 				print('For your safety - Motors has been disabled')
-				
-				
+
+
 			else:
 				leftState = False
 				rightState = False
 				leftStateCounter = False
 				rightStateCounter = False
-				
+
 			GPIO.output(leftDrive, leftState)
 			GPIO.output(rightDrive, rightState)
 			GPIO.output(leftDriveCounter, leftStateCounter)
 			GPIO.output(rightDriveCounter, rightStateCounter)
-			
+
 		# Wait for the interval period
 		dist()
 		if counter == 10:
@@ -353,7 +355,7 @@ try:
 		if counter > 40:
 			print('There is connection - Dont worry')
 			counter = 0
-			
+
 		time.sleep(interval)
 	# Disable all drives
 	MotorOff()
