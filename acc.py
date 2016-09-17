@@ -185,7 +185,7 @@ try:
         check += 0.1
         if check == 1.0:
             check = 0
-            print "I'm a happy robot!"
+            print ("I'm a happy robot!")
 
 
 except KeyboardInterrupt:
