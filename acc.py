@@ -59,6 +59,12 @@ def MotorOff():
     leftb.ChangeDutyCycle(0)
     rightf.ChangeDutyCycle(0)
     rightb.ChangeDutyCycle(0)
+    leftf.stop()
+    leftb.stop()
+    rightb.stop()
+    rightf.stop()
+
+    print (motor off)
 
 # Initializing joysticks
 pygame.init()
@@ -142,8 +148,9 @@ try:
 
             elif moveUp:
                 acc += 5
-                leftf.ChangeDutyCycle(acc)
-                rightf.ChangeDutyCycle(acc)
+                if acc < 101:
+                    leftf.ChangeDutyCycle(acc)
+                    rightf.ChangeDutyCycle(acc)
 
             #elif moveDown:
 
