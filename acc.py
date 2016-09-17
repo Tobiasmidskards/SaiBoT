@@ -32,6 +32,11 @@ moveRight = False
 moveQuit = False
 
 def init():
+  global leftf
+  global leftb
+  global rightf
+  global rightb
+  
   GPIO.setup(7, GPIO.OUT)# set GPIO 7 as output for LeftFwd
   GPIO.setup(11, GPIO.OUT)# set GPIO 11 as output for LeftBwd
   GPIO.setup(13, GPIO.OUT)# set GPIO 13 as output for RightFwd
