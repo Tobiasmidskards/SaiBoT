@@ -139,6 +139,7 @@ try:
                 break
 
             elif moveLeft:
+                acc = 40
                 acc += 5
                 if acc < 61:
                     leftb.ChangeDutyCycle(acc)
@@ -149,6 +150,7 @@ try:
                     acc = 60
 
             elif moveRight:
+                acc = 40
                 acc += 5
                 if acc < 61:
                     leftf.ChangeDutyCycle(acc)
