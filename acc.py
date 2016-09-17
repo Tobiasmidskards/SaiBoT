@@ -15,7 +15,9 @@ interval = 0.1 				# Time between keyboard updates in seconds, smaller responds 
 
 # Define accelerate counter
 global acc
+global accside
 acc = 0
+accside = 0
 
 # Setup pygame and key states
 global hadEvent
@@ -168,24 +170,24 @@ try:
                 break
 
             elif moveLeft:
-                acc += 5
-                if acc < 81:
+                accside += 5
+                if accside < 81:
                     leftb.ChangeDutyCycle(acc)
                     rightf.ChangeDutyCycle(acc)
                     leftf.ChangeDutyCycle(0)
                     rightb.ChangeDutyCycle(0)
                 else:
-                    acc = 60
+                    accside = 60
 
             elif moveRight:
-                acc += 5
-                while acc < 81 and leftRight > 0.1:
+                accside += 5
+                if accside < 81:
                     leftf.ChangeDutyCycle(acc)
                     rightb.ChangeDutyCycle(acc)
                     leftb.ChangeDutyCycle(0)
                     rightf.ChangeDutyCycle(0)
                 else:
-                    acc = 60
+                    accside = 60
 
             elif moveUp:
                 acc += 5
@@ -205,16 +207,17 @@ try:
 
             elif moveDown:
                 acc += 5
-                if acc < 101:
+                if acc < 61:
                     leftb.ChangeDutyCycle(acc)
                     rightb.ChangeDutyCycle(acc)
                     rightf.ChangeDutyCycle(0)
                     leftf.ChangeDutyCycle(0)
                 else:
-                    acc = 100
+                    acc = 60
 
             else:
                 acc = 35
+                accside = 35
                 MotorOff()
 
 
