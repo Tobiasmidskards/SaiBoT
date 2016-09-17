@@ -198,7 +198,7 @@ try:
                     rightf.ChangeDutyCycle(100)
                     leftb.ChangeDutyCycle(0)
                     rightb.ChangeDutyCycle(0)
-                    acc = 60
+                    acc = 55
 
                 elif upDown > -0.8 and acc > 0 and acc < 61:
                     leftf.ChangeDutyCycle(acc)
