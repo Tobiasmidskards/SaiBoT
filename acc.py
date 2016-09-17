@@ -216,7 +216,7 @@ def right(mode):
     leftb.ChangeDutyCycle(0)
     rightb.ChangeDutyCycle(0)
 
-def right(mode):
+def left(mode):
     if mode == 1:
         for i in range(40, 80):
             leftb.ChangeDutyCycle(i)
