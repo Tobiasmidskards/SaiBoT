@@ -26,12 +26,16 @@ global moveDown
 global moveLeft
 global moveRight
 global moveQuit
+global squarePressed
+global CrossPressed
 hadEvent = True
 moveUp = False
 moveDown = False
 moveLeft = False
 moveRight = False
 moveQuit = False
+squarePressed = False
+crossPressed = False
 
 def init():
   global leftf
@@ -126,6 +130,23 @@ def PygameHandler(events):
              hadEvent = True
              if event.type == pygae.K_ESCAPE:
                  moveQuit = False
+
+		elif event.type == pygame.JOYBUTTONDOWN:
+			# a button has been pressed
+			hadEvent = True
+			if joystick.get_button(0) == True:
+				squarePressed = True
+			if joystick.get_button(1) == True:
+				crossPressed = True
+
+		elif event.type == pygame.JOYBUTTONUP:
+			hadEvent = True
+			if joystick.get_button(0) == False:
+				squarePressed = False
+			if joystick.get_button(1) == False:
+				crossPressed = False
+
+
          elif event.type == pygame.JOYAXISMOTION:
              # A joystick has been moved, read axis positions (-1 to +1)
              hadEvent = True
@@ -152,6 +173,61 @@ def PygameHandler(events):
              else:
                   moveLeft = False
                   moveRight = False
+
+# to autonomos mode
+def forw(mode):
+    if mode == 1:
+        for i in range(50,100):
+            leftf.ChangeDutyCycle(i)
+            rightf.ChangeDutyCycle(i)
+    elif mode == 2:
+        leftf.ChangeDutyCycle(100)
+        rightf.ChangeDutyCycle(100)
+    leftf.ChangeDutyCycle(0)
+    rightf.ChangeDutyCycle(0)
+    leftb.ChangeDutyCycle(0)
+    rightb.ChangeDutyCycle(0)
+
+def backw(mode):
+    if mode == 1:
+        for i in range(50,100):
+            leftb.ChangeDutyCycle(i)
+            rightb.ChangeDutyCycle(i)
+    elif mode == 2:
+        leftb.ChangeDutyCycle(100)
+        rightb.ChangeDutyCycle(100)
+    leftf.ChangeDutyCycle(0)
+    rightf.ChangeDutyCycle(0)
+    leftb.ChangeDutyCycle(0)
+    rightb.ChangeDutyCycle(0)
+
+def right(mode):
+    if mode == 1:
+        for i in range(40, 80):
+            leftf.ChangeDutyCycle(i)
+            rightb.ChangeDutyCycle(i)
+            time.sleep(0.01)
+    elif mode == 2:
+        leftf.ChangeDutyCycle(100)
+        rightb.ChangeDutyCycle(100)
+    leftf.ChangeDutyCycle(0)
+    rightf.ChangeDutyCycle(0)
+    leftb.ChangeDutyCycle(0)
+    rightb.ChangeDutyCycle(0)
+
+def right(mode):
+    if mode == 1:
+        for i in range(40, 80):
+            leftb.ChangeDutyCycle(i)
+            rightf.ChangeDutyCycle(i)
+            time.sleep(0.01)
+    elif mode == 2:
+        leftb.ChangeDutyCycle(100)
+        rightf.ChangeDutyCycle(100)
+    leftf.ChangeDutyCycle(0)
+    rightf.ChangeDutyCycle(0)
+    leftb.ChangeDutyCycle(0)
+    rightb.ChangeDutyCycle(0)
 
 
 try:
@@ -192,10 +268,10 @@ try:
                     acc = 60
 
             elif moveUp and upDown < -0.8:
-                    leftf.ChangeDutyCycle(100)
-                    rightf.ChangeDutyCycle(100)
-                    leftb.ChangeDutyCycle(0)
-                    rightb.ChangeDutyCycle(0)
+                leftf.ChangeDutyCycle(100)
+                rightf.ChangeDutyCycle(100)
+                leftb.ChangeDutyCycle(0)
+                rightb.ChangeDutyCycle(0)
 
             elif moveUp:
                 acc += 5
@@ -208,7 +284,6 @@ try:
                     acc = 60
                     accside = 60
 
-
             elif moveDown:
                 acc += 5
                 if acc < 61:
@@ -219,6 +294,32 @@ try:
                 else:
                     acc = 60
                     accside = 60
+
+            elif crossPressed:
+				print('Square has been pressed')
+				print('Autonom mode is activated!')
+				print('Be aware! Alpha-testing')
+                forw(1)
+                while dist() > 25:
+                    forw(2)
+                    print("Forward!)
+                MotorOff()
+                print ("An obstacle is detected!")
+                time.sleep(2)
+                backw(1)
+                backw(2)
+                time.sleep(3)
+                left(1)
+                time.sleep(2)
+                if dist() > 50:
+                    break
+                right(1)
+                time.sleep(4)
+                if dist() > 50:
+                    break
+                right(1)
+                time.sleep(2)
+                print (dist())
 
             else:
                 acc = 35
