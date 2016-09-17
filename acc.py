@@ -169,6 +169,23 @@ try:
             if moveQuit:
                 break
 
+            elif moveUp:
+                acc += 5
+                if upDown < -0.8 and acc > 0:
+                    leftf.ChangeDutyCycle(100)
+                    rightf.ChangeDutyCycle(100)
+                    leftb.ChangeDutyCycle(0)
+                    rightb.ChangeDutyCycle(0)
+
+                elif upDown > -0.8 and acc < 61:
+                    leftf.ChangeDutyCycle(acc)
+                    rightf.ChangeDutyCycle(acc)
+                    leftb.ChangeDutyCycle(0)
+                    rightb.ChangeDutyCycle(0)
+                else:
+                    acc = 60
+                    accside = 60
+
             elif moveLeft:
                 accside += 5
                 if accside < 81:
@@ -190,23 +207,6 @@ try:
                 else:
                     accside = 60
                     acc = 60
-
-            elif moveUp:
-                acc += 5
-                if upDown < -0.8 and acc > 0:
-                    leftf.ChangeDutyCycle(100)
-                    rightf.ChangeDutyCycle(100)
-                    leftb.ChangeDutyCycle(0)
-                    rightb.ChangeDutyCycle(0)
-
-                elif upDown > -0.8 and acc < 61:
-                    leftf.ChangeDutyCycle(acc)
-                    rightf.ChangeDutyCycle(acc)
-                    leftb.ChangeDutyCycle(0)
-                    rightb.ChangeDutyCycle(0)
-                else:
-                    acc = 60
-                    accside = 60
 
             elif moveDown:
                 acc += 5
