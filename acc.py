@@ -134,15 +134,14 @@ try:
         if hadEvent:
             # Keys have changed, generate the command list based on keys
             hadEvent = False
-            MotorOff()
-            
+
             if moveQuit:
                 break
 
             elif moveLeft:
                 acc += 5
                 if acc < 101:
-                    leftf.ChangeDutyCycle(acc/4)
+                    leftb.ChangeDutyCycle(acc)
                     rightf.ChangeDutyCycle(acc)
                 else:
                     acc = 100
@@ -151,7 +150,7 @@ try:
                 acc += 5
                 if acc < 101:
                     leftf.ChangeDutyCycle(acc)
-                    rightf.ChangeDutyCycle(acc/4)
+                    rightb.ChangeDutyCycle(acc)
                 else:
                     acc = 100
 
