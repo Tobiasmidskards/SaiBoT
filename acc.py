@@ -182,6 +182,7 @@ def forw(mode):
         for i in range(50,100):
             leftf.ChangeDutyCycle(i)
             rightf.ChangeDutyCycle(i)
+            time.sleep(0.1)
             print "forward111"
     elif mode == "two":
         leftf.ChangeDutyCycle(100)
