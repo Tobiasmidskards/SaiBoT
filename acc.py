@@ -64,7 +64,7 @@ def MotorOff():
     rightb.stop()
     rightf.stop()
 
-    print (motor off)
+    print ("motor off")
 
 # Initializing joysticks
 pygame.init()
