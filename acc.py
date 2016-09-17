@@ -199,7 +199,7 @@ try:
                     leftb.ChangeDutyCycle(0)
                     rightb.ChangeDutyCycle(0)
 
-                elif upDown > -0.8 and acc > 0:
+                elif upDown > -0.8 and acc > 0 and acc < 61:
                     leftf.ChangeDutyCycle(acc)
                     rightf.ChangeDutyCycle(acc)
                     leftb.ChangeDutyCycle(0)
