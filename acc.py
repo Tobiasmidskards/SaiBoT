@@ -2,6 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 import pygame
+from __future__ import print_function
 
 
 GPIO.setmode(GPIO.BOARD)  # choose BCM or BOARD numbering schemes.
@@ -183,9 +184,10 @@ try:
 
         time.sleep(0.1)
         check += 1
-        if check == 30:
+        if check > 50:
             check = 0
             print ("I'm a happy robot!")
+        print(acc, end='\r')
 
 
 except KeyboardInterrupt:
