@@ -127,6 +127,7 @@ def PygameHandler(events):
          elif event.type == pygame.JOYAXISMOTION:
              # A joystick has been moved, read axis positions (-1 to +1)
              hadEvent = True
+             global upDown
              upDown = joystick.get_axis(axisUpDown)
              leftRight = joystick.get_axis(axisLeftRight)
 
@@ -186,14 +187,20 @@ try:
                     acc = 60
 
             elif moveUp:
+                if upDown > -0.5:
+                    leftf.ChangeDutyCycle(100)
+                    rightf.ChangeDutyCycle(100)
+                    leftb.ChangeDutyCycle(0)
+                    rightb.ChangeDutyCycle(0)
+
                 acc += 5
-                if acc < 101:
+                if acc < 61:
                     leftf.ChangeDutyCycle(acc)
                     rightf.ChangeDutyCycle(acc)
                     leftb.ChangeDutyCycle(0)
                     rightb.ChangeDutyCycle(0)
                 else:
-                    acc = 100
+                    acc = 60
 
             elif moveDown:
                 acc += 5
