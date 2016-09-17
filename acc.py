@@ -227,6 +227,8 @@ try:
 
         dist()
         time.sleep(0.1)
+        print (acc)
+        print (accside)
         check += 1
         if check > 15:
             check = 0
