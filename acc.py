@@ -179,7 +179,7 @@ try:
 
             elif moveRight:
                 acc += 5
-                if acc < 81 and leftRight > 0.1:
+                while acc < 81 and leftRight > 0.1:
                     leftf.ChangeDutyCycle(acc)
                     rightb.ChangeDutyCycle(acc)
                     leftb.ChangeDutyCycle(0)
