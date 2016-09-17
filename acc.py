@@ -131,20 +131,20 @@ def PygameHandler(events):
              if event.type == pygae.K_ESCAPE:
                  moveQuit = False
 
-		elif event.type == pygame.JOYBUTTONDOWN:
-			# a button has been pressed
-			hadEvent = True
-			if joystick.get_button(0) == True:
-				squarePressed = True
-			if joystick.get_button(1) == True:
-				crossPressed = True
+        elif event.type == pygame.JOYBUTTONDOWN:
+            # a button has been pressed
+            hadEvent = True
+            if joystick.get_button(0) == True:
+                squarePressed = True
+            if joystick.get_button(1) == True:
+                crossPressed = True
 
-		elif event.type == pygame.JOYBUTTONUP:
-			hadEvent = True
-			if joystick.get_button(0) == False:
-				squarePressed = False
-			if joystick.get_button(1) == False:
-				crossPressed = False
+        elif event.type == pygame.JOYBUTTONUP:
+            hadEvent = True
+            if joystick.get_button(0) == False:
+                squarePressed = False
+            if joystick.get_button(1) == False:
+                crossPressed = False
 
 
          elif event.type == pygame.JOYAXISMOTION:
@@ -296,9 +296,9 @@ try:
                     accside = 60
 
             elif crossPressed:
-				print('Square has been pressed')
-				print('Autonom mode is activated!')
-				print('Be aware! Alpha-testing')
+                print('Square has been pressed')
+                print('Autonom mode is activated!')
+                print('Be aware! Alpha-testing')
                 forw(1)
                 while dist() > 25:
                     forw(2)
