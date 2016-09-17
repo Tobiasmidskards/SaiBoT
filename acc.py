@@ -187,7 +187,7 @@ try:
         if check > 50:
             check = 0
             print ("I'm a happy robot!")
-        print("hey",'\r',)
+        print(acc,'\r',)
 
 
 except KeyboardInterrupt:
