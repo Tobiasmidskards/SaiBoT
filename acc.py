@@ -188,7 +188,7 @@ try:
 
             elif moveUp:
                 acc += 5
-                if upDown < -0.8:
+                if upDown < -0.8 and acc > 0:
                     leftf.ChangeDutyCycle(100)
                     rightf.ChangeDutyCycle(100)
                     leftb.ChangeDutyCycle(0)
