@@ -128,6 +128,7 @@ def PygameHandler(events):
              # A joystick has been moved, read axis positions (-1 to +1)
              hadEvent = True
              global upDown
+             global leftRight
              upDown = joystick.get_axis(axisUpDown)
              leftRight = joystick.get_axis(axisLeftRight)
 
@@ -178,7 +179,7 @@ try:
 
             elif moveRight:
                 acc += 5
-                if acc < 81:
+                if acc < 81 and leftRight > 0.1:
                     leftf.ChangeDutyCycle(acc)
                     rightb.ChangeDutyCycle(acc)
                     leftb.ChangeDutyCycle(0)
