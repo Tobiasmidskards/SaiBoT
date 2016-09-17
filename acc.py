@@ -59,7 +59,6 @@ def MotorOff():
     leftb.ChangeDutyCycle(0)
     rightf.ChangeDutyCycle(0)
     rightb.ChangeDutyCycle(0)
-    acc = 0
 
 # Initializing joysticks
 pygame.init()
@@ -149,6 +148,7 @@ try:
             #elif moveDown:
 
             else:
+                acc = 0
                 MotorOff()
 
             print (acc)
