@@ -140,23 +140,23 @@ try:
 
             elif moveLeft:
                 acc += 5
-                if acc < 101:
+                if acc < 61:
                     leftb.ChangeDutyCycle(acc)
                     rightf.ChangeDutyCycle(acc)
                     leftf.ChangeDutyCycle(0)
                     rightb.ChangeDutyCycle(0)
                 else:
-                    acc = 100
+                    acc = 60
 
             elif moveRight:
                 acc += 5
-                if acc < 101:
+                if acc < 61:
                     leftf.ChangeDutyCycle(acc)
                     rightb.ChangeDutyCycle(acc)
                     leftb.ChangeDutyCycle(0)
                     rightf.ChangeDutyCycle(0)
                 else:
-                    acc = 100
+                    acc = 60
 
             elif moveUp:
                 acc += 5
