@@ -187,14 +187,14 @@ try:
                     acc = 60
 
             elif moveUp:
-                if upDown < -0.5:
+                if upDown < -0.8:
                     leftf.ChangeDutyCycle(100)
                     rightf.ChangeDutyCycle(100)
                     leftb.ChangeDutyCycle(0)
                     rightb.ChangeDutyCycle(0)
 
                 acc += 5
-                if acc < 61:
+                elif acc < 61:
                     leftf.ChangeDutyCycle(acc)
                     rightf.ChangeDutyCycle(acc)
                     leftb.ChangeDutyCycle(0)
