@@ -176,6 +176,8 @@ def PygameHandler(events):
 
 # to autonomos mode
 def forw(mode):
+    global leftf
+    global rightf
     if mode == "one":
         for i in range(50,100):
             leftf.ChangeDutyCycle(i)
