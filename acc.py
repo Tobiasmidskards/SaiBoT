@@ -150,7 +150,13 @@ try:
                 else:
                     acc = 100
 
-            #elif moveDown:
+            elif moveDown:
+                acc += 5
+                if acc < 101:
+                    leftb.ChangeDutyCycle(acc)
+                    rightb.ChangeDutyCycle(acc)
+                else:
+                    acc = 100
 
             else:
                 acc = 0
