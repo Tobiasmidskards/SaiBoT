@@ -178,6 +178,7 @@ try:
                     rightb.ChangeDutyCycle(0)
                 else:
                     accside = 60
+                    acc = 60
 
             elif moveRight:
                 accside += 5
@@ -188,6 +189,7 @@ try:
                     rightf.ChangeDutyCycle(0)
                 else:
                     accside = 60
+                    acc = 60
 
             elif moveUp:
                 acc += 5
@@ -204,6 +206,7 @@ try:
                     rightb.ChangeDutyCycle(0)
                 else:
                     acc = 60
+                    accside = 60
 
             elif moveDown:
                 acc += 5
@@ -214,6 +217,7 @@ try:
                     leftf.ChangeDutyCycle(0)
                 else:
                     acc = 60
+                    accside = 60
 
             else:
                 acc = 35
