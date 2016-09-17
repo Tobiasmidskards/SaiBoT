@@ -145,7 +145,6 @@ try:
                     rightf.ChangeDutyCycle(acc)
                 else:
                     acc = 100
-                MotorOff()
 
             elif moveRight:
                 acc += 5
