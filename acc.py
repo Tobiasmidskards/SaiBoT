@@ -3,9 +3,8 @@ import RPi.GPIO as GPIO
 import time
 import pygame
 
-
-
 GPIO.setmode(GPIO.BOARD)  # choose BCM or BOARD numbering schemes.
+GPIO.setwarnings(False)
 
 # Settings for joystick
 axisUpDown = 1                          # Joystick axis to read for up / down position
@@ -43,6 +42,13 @@ def init():
   GPIO.setup(13, GPIO.OUT)# set GPIO 13 as output for RightFwd
   GPIO.setup(15, GPIO.OUT)# set GPIO 15 as output for RightBwd
 
+  # GPIO pins for distance
+  trigger = 12
+  echo = 16
+
+  GPIO.setup(trigger, GPIO.OUT)
+  GPIO.setup(echo, GPIO.IN)
+
   leftf = GPIO.PWM(7, 100)   # create object LeftFwd for PWM on port 7 at 100 Hertz
   leftb = GPIO.PWM(11, 100)  # create object LeftBwd for PWM on port 11 at 100 Hertz
 
@@ -54,6 +60,25 @@ def init():
 
   rightf.start(0)
   rightb.start(0)
+
+def dist():
+    global distance
+    global noSignal
+    global Signal
+    GPIO.output(12, True)
+    time.sleep(0.00001)
+    GPIO.output(12, False)
+
+    while GPIO.input(echo) == 0:
+        noSignal = time.time()
+
+    while GPIO.input(echo) == 1:
+        Signal = time.time()
+
+    difference = (Signal - noSignal)
+
+    distance = difference / 0.000058
+    return distance
 
 def MotorOff():
     leftf.ChangeDutyCycle(0)
@@ -182,12 +207,14 @@ try:
                 acc = 35
                 MotorOff()
 
+
+        dist()
         time.sleep(0.1)
         check += 1
         if check > 50:
             check = 0
             print ("I'm a happy robot!")
-        print(acc,'\r',)
+            print ("The distance is:", distance)
 
 
 except KeyboardInterrupt:
