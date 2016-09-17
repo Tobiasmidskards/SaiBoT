@@ -2,6 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 import pygame
+from __future__ import print_function
 
 
 GPIO.setmode(GPIO.BOARD)  # choose BCM or BOARD numbering schemes.
@@ -123,7 +124,7 @@ def PygameHandler(events):
 
 
 try:
-    print 'Press [CTRL + C]'
+    print ("Press [CTRL + C]")
     init()
     check = 1
     # Main Loop
