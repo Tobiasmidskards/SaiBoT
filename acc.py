@@ -171,7 +171,7 @@ try:
                     acc = 100
 
             else:
-                acc = 0
+                acc = 15
                 MotorOff()
 
             print (acc)
