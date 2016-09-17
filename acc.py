@@ -1,8 +1,9 @@
 # Loads librarys
+from __future__ import print_function
 import RPi.GPIO as GPIO
 import time
 import pygame
-from __future__ import print_function
+
 
 
 GPIO.setmode(GPIO.BOARD)  # choose BCM or BOARD numbering schemes.
