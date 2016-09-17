@@ -180,6 +180,7 @@ def forw(mode):
         for i in range(50,100):
             leftf.ChangeDutyCycle(i)
             rightf.ChangeDutyCycle(i)
+            print "forward111"
     elif mode == 2:
         leftf.ChangeDutyCycle(100)
         rightf.ChangeDutyCycle(100)
