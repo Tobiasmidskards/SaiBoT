@@ -50,10 +50,10 @@ def init():
   rightb.start(0)
 
 def MotorOff():
-	leftf.ChangeDutyCycle(0)
-	leftb.ChangeDutyCycle(0)
-	rightf.ChangeDutyCycle(0)
-	rightb.ChangeDutyCycle(0)
+    leftf.ChangeDutyCycle(0)
+    leftb.ChangeDutyCycle(0)
+    rightf.ChangeDutyCycle(0)
+    rightb.ChangeDutyCycle(0)
     acc = 0
 
 # Initializing joysticks
