@@ -60,8 +60,6 @@ def MotorOff():
     rightf.ChangeDutyCycle(0)
     rightb.ChangeDutyCycle(0)
 
-    print ("motor off")
-
 # Initializing joysticks
 pygame.init()
 pygame.joystick.init()
@@ -127,6 +125,7 @@ def PygameHandler(events):
 try:
     print 'Press [CTRL + C]'
     init()
+    check = 0.0
     # Main Loop
     while True:
         # Get the currently activated inputs
@@ -182,9 +181,12 @@ try:
                 acc = 35
                 MotorOff()
 
-            print (acc)
-
         time.sleep(0.1)
+        check += 0.1
+        if check == 5:
+            check = 0
+            print "I'm a happy robot!"
+
 
 except KeyboardInterrupt:
     MotorOff()
