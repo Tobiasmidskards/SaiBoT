@@ -176,12 +176,12 @@ def PygameHandler(events):
 
 # to autonomos mode
 def forw(mode):
-    if mode == 1:
+    if mode == "one":
         for i in range(50,100):
             leftf.ChangeDutyCycle(i)
             rightf.ChangeDutyCycle(i)
             print "forward111"
-    elif mode == 2:
+    elif mode == "two":
         leftf.ChangeDutyCycle(100)
         rightf.ChangeDutyCycle(100)
     leftf.ChangeDutyCycle(0)
@@ -300,9 +300,9 @@ try:
                 print('Square has been pressed')
                 print('Autonom mode is activated!')
                 print('Be aware! Alpha-testing')
-                forw(1)
+                forw("one")
                 while dist() > 25:
-                    forw(2)
+                    forw("two")
                     print("Forward!")
                 MotorOff()
                 print ("An obstacle is detected!")
