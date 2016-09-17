@@ -214,7 +214,7 @@ try:
         if check > 50:
             check = 0
             print ("I'm a happy robot!")
-            print ("The distance is:", distance)
+            print "The distance is:", distance
 
 
 except KeyboardInterrupt:
