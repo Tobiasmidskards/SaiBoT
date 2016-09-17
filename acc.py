@@ -132,16 +132,16 @@ try:
             if moveQuit:
                 break
 
-            elif moveLeft:
+            #elif moveLeft:
 
-            elif moveRight:
+            #elif moveRight:
 
             elif moveUp:
                 acc += 1
                 leftf.ChangeDutyCycle(acc)
                 rightf.ChangeDutyCycle(acc)
 
-            elif moveDown:
+            #elif moveDown:
 
             else:
                 MotorOff()
