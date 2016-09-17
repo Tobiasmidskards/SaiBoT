@@ -211,7 +211,7 @@ try:
         dist()
         time.sleep(0.1)
         check += 1
-        if check > 50:
+        if check > 15:
             check = 0
             print ("\nI'm a happy robot!\n")
             print "The distance is:", distance
