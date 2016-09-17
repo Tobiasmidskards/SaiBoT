@@ -1,5 +1,4 @@
 # Loads librarys
-from __future__ import print_function
 import RPi.GPIO as GPIO
 import time
 import pygame
