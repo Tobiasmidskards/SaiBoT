@@ -125,7 +125,7 @@ def PygameHandler(events):
 try:
     print 'Press [CTRL + C]'
     init()
-    check = 0.0
+    check = 1
     # Main Loop
     while True:
         # Get the currently activated inputs
@@ -182,8 +182,8 @@ try:
                 MotorOff()
 
         time.sleep(0.1)
-        check += 0.1
-        if check == 1.0:
+        check += 1
+        if check == 30:
             check = 0
             print ("I'm a happy robot!")
 
