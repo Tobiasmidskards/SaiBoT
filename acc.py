@@ -138,9 +138,23 @@ try:
             if moveQuit:
                 break
 
-            #elif moveLeft:
+            elif moveLeft:
+                acc += 5
+                if acc < 101:
+                    leftf.ChangeDutyCycle(acc/2)
+                    rightf.ChangeDutyCycle(acc)
+                else:
+                    acc = 100
+                MotorOff()
 
-            #elif moveRight:
+            elif moveRight:
+                acc += 5
+                if acc < 101:
+                    leftf.ChangeDutyCycle(acc)
+                    rightf.ChangeDutyCycle(acc/2)
+                else:
+                    acc = 100
+                MotorOff()
 
             elif moveUp:
                 acc += 5
@@ -149,6 +163,7 @@ try:
                     rightf.ChangeDutyCycle(acc)
                 else:
                     acc = 100
+                MotorOff()
 
             elif moveDown:
                 acc += 5
@@ -157,6 +172,7 @@ try:
                     rightb.ChangeDutyCycle(acc)
                 else:
                     acc = 100
+                MotorOff()
 
             else:
                 acc = 0
