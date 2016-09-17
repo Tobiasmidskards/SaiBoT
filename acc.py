@@ -66,15 +66,15 @@ pygame.display.set_caption("SaiBot - Press [ESC] to quit")
 
 # Function to handle joystick
 def PygameHandler(events):
-	# Variables accessible outside this function
-	global hadEvent
-	global moveUp
-	global moveDown
-	global moveLeft
-	global moveRight
-	global moveQuit
-	global squarePressed
-	global crossPressed
+    # Variables accessible outside this function
+    global hadEvent
+    global moveUp
+    global moveDown
+    global moveLeft
+    global moveRight
+    global moveQuit
+    global squarePressed
+    global crossPressed
 
     # Handles each events individually
     for event in events:
@@ -108,14 +108,14 @@ def PygameHandler(events):
                  moveUp = False
                  moveDown = False
              if leftRight < -0.1:
- 			     moveLeft = True
- 				 moveRight = False
+                  moveLeft = True
+                  moveRight = False
              elif leftRight > 0.1:
- 				 moveLeft = False
- 				 moveRight = True
+                  moveLeft = False
+                  moveRight = True
              else:
- 				 moveLeft = False
- 				 moveRight = False
+                  moveLeft = False
+                  moveRight = False
 
 
 try:
@@ -123,11 +123,11 @@ try:
 
     # Main Loop
     while True:
-		# Get the currently activated inputs
-		PygameHandler(pygame.event.get())
+        # Get the currently activated inputs
+        PygameHandler(pygame.event.get())
         if hadEvent:
-			# Keys have changed, generate the command list based on keys
-			hadEvent = False
+            # Keys have changed, generate the command list based on keys
+            hadEvent = False
 
             if moveQuit:
                 break
