@@ -183,7 +183,7 @@ try:
 
         time.sleep(0.1)
         check += 0.1
-        if check == 5:
+        if check == 1.0:
             check = 0
             print "I'm a happy robot!"
 
