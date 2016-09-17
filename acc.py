@@ -163,6 +163,8 @@ try:
                 if acc < 101:
                     leftf.ChangeDutyCycle(acc)
                     rightf.ChangeDutyCycle(acc)
+                    leftb.ChangeDutyCycle(0)
+                    rightb.ChangeDutyCycle(0)
                 else:
                     acc = 100
 
@@ -171,6 +173,8 @@ try:
                 if acc < 101:
                     leftb.ChangeDutyCycle(acc)
                     rightb.ChangeDutyCycle(acc)
+                    rightf.ChangeDutyCycle(0)
+                    leftf.ChangeDutyCycle(0)
                 else:
                     acc = 100
 
