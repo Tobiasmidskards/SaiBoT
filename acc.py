@@ -139,7 +139,6 @@ try:
                 break
 
             elif moveLeft:
-                acc = 40
                 acc += 5
                 if acc < 81:
                     leftb.ChangeDutyCycle(acc)
@@ -150,7 +149,6 @@ try:
                     acc = 60
 
             elif moveRight:
-                acc = 40
                 acc += 5
                 if acc < 81:
                     leftf.ChangeDutyCycle(acc)
@@ -181,7 +179,7 @@ try:
                     acc = 100
 
             else:
-                acc = 25
+                acc = 35
                 MotorOff()
 
             print (acc)
