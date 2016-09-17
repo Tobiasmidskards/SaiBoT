@@ -131,7 +131,7 @@ def PygameHandler(events):
              if event.type == pygae.K_ESCAPE:
                  moveQuit = False
 
-        elif event.type == pygame.JOYBUTTONDOWN:
+         elif event.type == pygame.JOYBUTTONDOWN:
             # a button has been pressed
             hadEvent = True
             if joystick.get_button(0) == True:
@@ -139,7 +139,7 @@ def PygameHandler(events):
             if joystick.get_button(1) == True:
                 crossPressed = True
 
-        elif event.type == pygame.JOYBUTTONUP:
+         elif event.type == pygame.JOYBUTTONUP:
             hadEvent = True
             if joystick.get_button(0) == False:
                 squarePressed = False
