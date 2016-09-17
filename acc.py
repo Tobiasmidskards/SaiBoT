@@ -69,10 +69,10 @@ def dist():
     time.sleep(0.00001)
     GPIO.output(12, False)
 
-    while GPIO.input(echo) == 0:
+    while GPIO.input(16) == 0:
         noSignal = time.time()
 
-    while GPIO.input(echo) == 1:
+    while GPIO.input(16) == 1:
         Signal = time.time()
 
     difference = (Signal - noSignal)
