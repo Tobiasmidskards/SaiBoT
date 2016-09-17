@@ -213,7 +213,7 @@ try:
         check += 1
         if check > 50:
             check = 0
-            print ("I'm a happy robot! \n \n")
+            print ("\nI'm a happy robot!\n")
             print "The distance is:", distance
 
 
