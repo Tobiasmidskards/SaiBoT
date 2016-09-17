@@ -36,6 +36,8 @@ def init():
   global leftb
   global rightf
   global rightb
+  global noSignal
+  noSignal = 0
 
   GPIO.setup(7, GPIO.OUT)# set GPIO 7 as output for LeftFwd
   GPIO.setup(11, GPIO.OUT)# set GPIO 11 as output for LeftBwd
