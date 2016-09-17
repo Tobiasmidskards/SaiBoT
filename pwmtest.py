@@ -1,6 +1,8 @@
 import RPi.GPIO as GPIO # always needed with RPi.GPIO
 from time import sleep  # pull in the sleep function from time module
 
+#test
+
 GPIO.setmode(GPIO.BOARD)  # choose BCM or BOARD numbering schemes. I use BCM
 
 GPIO.setup(7, GPIO.OUT)# set GPIO 25 as output for white led
@@ -39,7 +41,7 @@ try:
         rightf.ChangeDutyCycle(0)
         sleep(2)
 
-        
+
         for i in range(100,-1,-1):      # from 100 to zero in steps of -1
             #white.ChangeDutyCycle(i)
             leftb.ChangeDutyCycle(100 - i)
