@@ -141,7 +141,7 @@ try:
             #elif moveRight:
 
             elif moveUp:
-                acc += 1
+                acc += 5
                 leftf.ChangeDutyCycle(acc)
                 rightf.ChangeDutyCycle(acc)
 
