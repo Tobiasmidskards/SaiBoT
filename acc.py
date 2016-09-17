@@ -9,7 +9,7 @@ GPIO.setmode(GPIO.BOARD)  # choose BCM or BOARD numbering schemes.
 # Settings for joystick
 axisUpDown = 1                          # Joystick axis to read for up / down position
 axisUpDownInverted = False 		# Set this to True if up and down appear to be swapped
-axisLeftRight = 0 			# Joystick axis to read for left / right position
+axisLeftRight = 2 			# Joystick axis to read for left / right position
 axisLeftRightInverted = False 		# Set this to True if left and right appear to be swapped
 interval = 0.1 				# Time between keyboard updates in seconds, smaller responds faster but uses more processor time
 
@@ -134,14 +134,15 @@ try:
         if hadEvent:
             # Keys have changed, generate the command list based on keys
             hadEvent = False
-
+            MotorOff()
+            
             if moveQuit:
                 break
 
             elif moveLeft:
                 acc += 5
                 if acc < 101:
-                    leftf.ChangeDutyCycle(acc/2)
+                    leftf.ChangeDutyCycle(acc/4)
                     rightf.ChangeDutyCycle(acc)
                 else:
                     acc = 100
@@ -150,10 +151,9 @@ try:
                 acc += 5
                 if acc < 101:
                     leftf.ChangeDutyCycle(acc)
-                    rightf.ChangeDutyCycle(acc/2)
+                    rightf.ChangeDutyCycle(acc/4)
                 else:
                     acc = 100
-                MotorOff()
 
             elif moveUp:
                 acc += 5
@@ -162,7 +162,6 @@ try:
                     rightf.ChangeDutyCycle(acc)
                 else:
                     acc = 100
-                MotorOff()
 
             elif moveDown:
                 acc += 5
@@ -171,7 +170,6 @@ try:
                     rightb.ChangeDutyCycle(acc)
                 else:
                     acc = 100
-                MotorOff()
 
             else:
                 acc = 0
