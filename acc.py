@@ -302,7 +302,7 @@ try:
                 forw(1)
                 while dist() > 25:
                     forw(2)
-                    print("Forward!)
+                    print("Forward!")
                 MotorOff()
                 print ("An obstacle is detected!")
                 time.sleep(2)
