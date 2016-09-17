@@ -59,10 +59,6 @@ def MotorOff():
     leftb.ChangeDutyCycle(0)
     rightf.ChangeDutyCycle(0)
     rightb.ChangeDutyCycle(0)
-    leftf.stop()
-    leftb.stop()
-    rightb.stop()
-    rightf.stop()
 
     print ("motor off")
 
@@ -151,6 +147,8 @@ try:
                 if acc < 101:
                     leftf.ChangeDutyCycle(acc)
                     rightf.ChangeDutyCycle(acc)
+                else:
+                    acc = 100
 
             #elif moveDown:
 
@@ -164,4 +162,8 @@ try:
 
 except KeyboardInterrupt:
     MotorOff()
+    leftf.stop()
+    leftb.stop()
+    rightb.stop()
+    rightf.stop()
     GPIO.cleanup()
