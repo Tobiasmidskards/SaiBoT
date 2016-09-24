@@ -2,6 +2,9 @@
 import RPi.GPIO as GPIO
 import time
 
+global no_signal
+global signal
+
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
