@@ -180,8 +180,6 @@ def PygameHandler(events):
              else:
                  print right
 
-             print "left:", int(up) , int(down) , "right:", int(upr) , int(downr)
-
 ###############################################################################
 
 # to autonomos mode
