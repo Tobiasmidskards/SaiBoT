@@ -170,7 +170,8 @@ def PygameHandler(events):
                  down = left * 100
 
              else:
-                 print left
+                 up = 0
+                 down = 0
 
              if right < 0:
                  upr = right * (-1) * (100)
@@ -178,7 +179,8 @@ def PygameHandler(events):
              elif right > 0:
                  downr = right * 100
              else:
-                 print right
+                 upr = 0
+                 downr = 0
 
 ###############################################################################
 
