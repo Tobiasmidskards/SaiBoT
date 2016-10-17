@@ -223,7 +223,7 @@ try:
             if moveQuit:
                 break
 
-            elif :
+            # elif :
 
             else:
                 acc = 35
