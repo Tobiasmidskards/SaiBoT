@@ -174,9 +174,9 @@ def PygameHandler(events):
             #  else:
             #       moveLeft = False
             #       moveRight = False
-
-             print (upDown)
              print (leftRight)
+             print (upDown)
+
 ###############################################################################
 
 # to autonomos mode
