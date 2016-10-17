@@ -231,7 +231,6 @@ try:
                 MotorOff()
 
 
-        dist()
         time.sleep(0.1)
         print (acc , "acc")
         print (accside , "accside")
