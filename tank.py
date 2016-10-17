@@ -229,11 +229,11 @@ try:
             if moveQuit:
                 break
 
-            # elif :
+            if up or down or upr or downr != 0:
+                print "lol"
+
 
             else:
-                acc = 35
-                accside = 35
                 MotorOff()
 
 
