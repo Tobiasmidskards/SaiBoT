@@ -152,6 +152,10 @@ def PygameHandler(events):
              hadEvent = True
              global left
              global right
+             global up
+             global down
+             global upr
+             global downr
              up = 0
              upr = 0
              down = 0
@@ -233,6 +237,7 @@ try:
                 MotorOff()
 
 
+        print "left12312:", int(up) , int(down) , "right:", int(upr) , int(downr)
         time.sleep(0.1)
         check += 1
         if check > 15:
