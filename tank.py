@@ -155,7 +155,7 @@ def PygameHandler(events):
              en = joystick.get_axis(0)
              to = joystick.get_axis(1)
              tre = joystick.get_axis(2)
-             fire = joystick.get_axis(-1)
+             fire = joystick.get_axis(3)
 
             #  if upDown < -0.1:
             #      moveUp = True
