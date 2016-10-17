@@ -176,8 +176,8 @@ def PygameHandler(events):
              else:
                  print right
 
-             print "left:", up , down
-             print "right:", upr , downr
+             print "left:", int(up) , int(down)
+             print "right:", int(upr) , int(downr)
 
 ###############################################################################
 
