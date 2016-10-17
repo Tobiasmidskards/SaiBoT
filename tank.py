@@ -155,24 +155,25 @@ def PygameHandler(events):
              upDown = joystick.get_axis(axisUpDown)
              leftRight = joystick.get_axis(axisLeftRight)
 
-             if upDown < -0.1:
-                 moveUp = True
-                 moveDown = False
-             elif upDown > 0.1:
-                 moveUp = False
-                 moveDown = True
-             else:
-                 moveUp = False
-                 moveDown = False
-             if leftRight < -0.1:
-                  moveLeft = True
-                  moveRight = False
-             elif leftRight > 0.1:
-                  moveLeft = False
-                  moveRight = True
-             else:
-                  moveLeft = False
-                  moveRight = False
+            #  if upDown < -0.1:
+            #      moveUp = True
+            #      moveDown = False
+            #  elif upDown > 0.1:
+            #      moveUp = False
+            #      moveDown = True
+            #  else:
+            #      moveUp = False
+            #      moveDown = False
+             #
+            #  if leftRight < -0.1:
+            #       moveLeft = True
+            #       moveRight = False
+            #  elif leftRight > 0.1:
+            #       moveLeft = False
+            #       moveRight = True
+            #  else:
+            #       moveLeft = False
+            #       moveRight = False
 
              print (upDown)
              print (leftRight)
