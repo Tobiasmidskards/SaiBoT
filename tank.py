@@ -237,7 +237,7 @@ try:
                 MotorOff()
 
 
-        print "left12312:", int(up) , int(down) , "right:", int(upr) , int(downr)
+        print "L:", int(up) , int(down) , "R:", int(upr) , int(downr)
         time.sleep(0.1)
         check += 1
         if check > 15:
