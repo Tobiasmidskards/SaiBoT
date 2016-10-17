@@ -150,12 +150,11 @@ def PygameHandler(events):
          elif event.type == pygame.JOYAXISMOTION:
              # A joystick has been moved, read axis positions (-1 to +1)
              hadEvent = True
-             global upDown
-             global leftRight
-             en = joystick.get_axis(4)
-             to = joystick.get_axis(5)
-             tre = joystick.get_axis(2)
-             fire = joystick.get_axis(0)
+             global left
+             global right
+
+             left = joystick.get_axis(1)
+             right = joystick.get_axis(5)
 
             #  if upDown < -0.1:
             #      moveUp = True
@@ -176,10 +175,8 @@ def PygameHandler(events):
             #  else:
             #       moveLeft = False
             #       moveRight = False
-             print (en)
-             print (to)
-             print (tre)
-             print (fire)
+             print ("left:", left)
+             print ("right:", to)
 
 ###############################################################################
 
