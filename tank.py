@@ -234,8 +234,6 @@ try:
 
 
         time.sleep(0.1)
-        print (acc , "acc")
-        print (accside , "accside")
         check += 1
         if check > 15:
             check = 0
