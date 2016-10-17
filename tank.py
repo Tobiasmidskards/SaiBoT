@@ -176,7 +176,7 @@ def PygameHandler(events):
             #       moveLeft = False
             #       moveRight = False
              print ("left:", left)
-             print ("right:", to)
+             print ("right:", right)
 
 ###############################################################################
 
