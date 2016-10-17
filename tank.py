@@ -152,6 +152,10 @@ def PygameHandler(events):
              hadEvent = True
              global left
              global right
+             up = 0
+             upr = 0
+             down = 0
+             downr = 0
 
              left = joystick.get_axis(1)
              right = joystick.get_axis(5)
