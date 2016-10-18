@@ -69,31 +69,6 @@ def init():
   rightf.start(0)
   rightb.start(0)
 
-def dist():
-    global distance
-    global noSignal
-    global Signal
-    GPIO.output(12, True)
-    time.sleep(0.00001)
-    GPIO.output(12, False)
-
-    while GPIO.input(16) == 0:
-        noSignal = time.time()
-
-    while GPIO.input(16) == 1:
-        Signal = time.time()
-
-    difference = (Signal - noSignal)
-
-    distance = difference / 0.000058
-    return distance
-
-def MotorOff():
-    leftf.ChangeDutyCycle(0)
-    leftb.ChangeDutyCycle(0)
-    rightf.ChangeDutyCycle(0)
-    rightb.ChangeDutyCycle(0)
-
 # Initializing joysticks
 pygame.init()
 pygame.joystick.init()
@@ -120,31 +95,6 @@ def PygameHandler(events):
              # User exit
              hadEvent = True
              moveQuit = True
-         elif event.type == pygame.KEYDOWN:
-             # A key has been pressed, see if it is one we want
-             hadEvent = True
-             if event.key == pygame.K_ESCAPE:
-                 moveQuit = True
-         elif event.type == pygame.KEYUP:
-             # A key has been released, see if it is one we want
-             hadEvent = True
-             if event.type == pygae.K_ESCAPE:
-                 moveQuit = False
-
-         elif event.type == pygame.JOYBUTTONDOWN:
-            # a button has been pressed
-            hadEvent = True
-            if joystick.get_button(0) == True:
-                squarePressed = True
-            if joystick.get_button(1) == True:
-                crossPressed = True
-
-         elif event.type == pygame.JOYBUTTONUP:
-            hadEvent = True
-            if joystick.get_button(0) == False:
-                squarePressed = False
-            if joystick.get_button(1) == False:
-                crossPressed = False
 
 ###############################################################################
          elif event.type == pygame.JOYAXISMOTION:
@@ -183,35 +133,6 @@ def PygameHandler(events):
                  downr = 0
 
 ###############################################################################
-
-# to autonomos mode
-def forw(mode):
-
-    leftf.ChangeDutyCycle(0)
-    rightf.ChangeDutyCycle(0)
-    leftb.ChangeDutyCycle(0)
-    rightb.ChangeDutyCycle(0)
-
-def backw(mode):
-
-    leftf.ChangeDutyCycle(0)
-    rightf.ChangeDutyCycle(0)
-    leftb.ChangeDutyCycle(0)
-    rightb.ChangeDutyCycle(0)
-
-def right(mode):
-
-    leftf.ChangeDutyCycle(0)
-    rightf.ChangeDutyCycle(0)
-    leftb.ChangeDutyCycle(0)
-    rightb.ChangeDutyCycle(0)
-
-def left(mode):
-
-    leftf.ChangeDutyCycle(0)
-    rightf.ChangeDutyCycle(0)
-    leftb.ChangeDutyCycle(0)
-    rightb.ChangeDutyCycle(0)
 
 
 try:
