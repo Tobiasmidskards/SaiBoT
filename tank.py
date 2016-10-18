@@ -86,7 +86,7 @@ def PygameHandler(events):
              if left < 0:
                  up = left * (-1) * (100)
              elif left > 0:
-                 down = left * 100
+                 down = (left * 100)+1
 
              else:
                  up = 0
@@ -96,7 +96,7 @@ def PygameHandler(events):
                  upr = right * (-1) * (100)
 
              elif right > 0:
-                 downr = right * 100
+                 downr = (right * 100)+1
              else:
                  upr = 0
                  downr = 0
