@@ -6,14 +6,6 @@ import pygame
 GPIO.setmode(GPIO.BOARD)  # choose BCM or BOARD numbering schemes.
 GPIO.setwarnings(False)
 
-# Settings for joystick
-axisUpDown = 1                          # Joystick axis to read for up / down position
-axisUpDownInverted = False 		# Set this to True if up and down appear to be swapped
-axisLeftRight = 3 			# Joystick axis to read for left / right position
-axisLeftRightInverted = False 		# Set this to True if left and right appear to be swapped
-interval = 0.1 				# Time between keyboard updates in seconds, smaller responds faster but uses more processor time
-
-
 # Setup pygame and key states
 global hadEvent
 global moveQuit
@@ -58,7 +50,7 @@ pygame.joystick.init()
 joystick = pygame.joystick.Joystick(0)
 joystick.init()
 screen = pygame.display.set_mode([300,300])
-pygame.display.set_caption("SaiBot - Press [ESC] to quit")
+pygame.display.set_caption("SaiBot")
 
 # Function to handle joystick
 def PygameHandler(events):
@@ -131,8 +123,7 @@ try:
             leftb.ChangeDutyCycle(down)
             rightb.ChangeDutyCycle(downr)
 
-
-        print "L:", int(up) , int(down) , "R:", int(upr) , int(downr)
+        print "L:", int(up) ,"-", int(down) , "R:", int(upr) ,"-", int(downr)
         time.sleep(0.1)
 
 except KeyboardInterrupt:
