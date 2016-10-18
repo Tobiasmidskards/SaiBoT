@@ -13,29 +13,12 @@ axisLeftRight = 3 			# Joystick axis to read for left / right position
 axisLeftRightInverted = False 		# Set this to True if left and right appear to be swapped
 interval = 0.1 				# Time between keyboard updates in seconds, smaller responds faster but uses more processor time
 
-# Define accelerate counter
-global acc
-global accside
-acc = 0
-accside = 0
 
 # Setup pygame and key states
 global hadEvent
-global moveUp
-global moveDown
-global moveLeft
-global moveRight
 global moveQuit
-global squarePressed
-global CrossPressed
 hadEvent = True
-moveUp = False
-moveDown = False
-moveLeft = False
-moveRight = False
 moveQuit = False
-squarePressed = False
-crossPressed = False
 
 def init():
   global leftf
@@ -81,13 +64,7 @@ pygame.display.set_caption("SaiBot - Press [ESC] to quit")
 def PygameHandler(events):
     # Variables accessible outside this function
     global hadEvent
-    global moveUp
-    global moveDown
-    global moveLeft
-    global moveRight
     global moveQuit
-    global squarePressed
-    global crossPressed
 
     # Handles each events individually
     for event in events:
@@ -138,7 +115,6 @@ def PygameHandler(events):
 try:
     print ("Press [CTRL + C]")
     init()
-    check = 1
     # Main Loop
     while True:
         # Get the currently activated inputs
@@ -156,19 +132,10 @@ try:
             rightb.ChangeDutyCycle(downr)
 
 
-
-
         print "L:", int(up) , int(down) , "R:", int(upr) , int(downr)
         time.sleep(0.1)
-        check += 1
-        if check > 15:
-            check = 0
-            #print ("\nI'm a happy robot!\n")
-            #print "The distance is:", distance
-
 
 except KeyboardInterrupt:
-    MotorOff()
     leftf.stop()
     leftb.stop()
     rightb.stop()
