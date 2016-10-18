@@ -230,8 +230,10 @@ try:
                 break
 
             if up or down or upr or downr != 0:
-                print "lol"
-
+                    leftf.ChangeDutyCycle(up)
+                    rightf.ChangeDutyCycle(upr)
+                    leftb.ChangeDutyCycle(down)
+                    rightb.ChangeDutyCycle(downr)
 
             else:
                 MotorOff()
