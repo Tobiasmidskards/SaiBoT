@@ -150,14 +150,12 @@ try:
             if moveQuit:
                 break
 
-            if up or down or upr or downr != 0:
-                    leftf.ChangeDutyCycle(up)
-                    rightf.ChangeDutyCycle(upr)
-                    leftb.ChangeDutyCycle(down)
-                    rightb.ChangeDutyCycle(downr)
+            leftf.ChangeDutyCycle(up)
+            rightf.ChangeDutyCycle(upr)
+            leftb.ChangeDutyCycle(down)
+            rightb.ChangeDutyCycle(downr)
 
-            else:
-                MotorOff()
+
 
 
         print "L:", int(up) , int(down) , "R:", int(upr) , int(downr)
