@@ -5,4 +5,4 @@ This repository is for my new robot named, SaiBoT. It has two motors turning the
 Functions has been uploaded. This file will contain all functions for the robot.
 
 ### Usage:
-This can either be controlled by a PS4 joystick or by itself by autonomous.
+This can either be controlled by a PS4 joystick or by itself minimal autonomous.
